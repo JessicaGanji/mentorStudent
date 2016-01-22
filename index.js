@@ -33,7 +33,6 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 mongoose.connect(mongoUri);
 
-
 app.use('/students', studentsRouter)
 
 app.use('/mentors', mentorsRouter)

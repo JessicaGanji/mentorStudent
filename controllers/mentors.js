@@ -46,17 +46,7 @@ function getIndex(request, response) {
 }
 
 // GET /mentors/:id
-function getShow(request, response) {
-
-}
-
-// GET /mentors/new
-function getNew(request, response) {
-
-}
-
-// POST
-function postProfile(request, response) {
+function getProfile(request, response) {
 
 }
 
@@ -85,9 +75,7 @@ module.exports = {
   postSignup: postSignup,
   getLogout: getLogout,
   getIndex: getIndex,
-  getShow: getShow,
-  getNew: getNew,
-  postProfile: postProfile,
+  getProfile: getProfile,
   getEdit: getEdit,
   patchProfile: patchProfile,
   deleteProfile: deleteProfile,
