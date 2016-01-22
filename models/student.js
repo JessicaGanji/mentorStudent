@@ -5,7 +5,7 @@ var StudentSchema = mongoose.Schema({
 	local: {
 		email        : String,
 		password     : String,
-	}
+	},
 	first_name: String,
 	last_name: String,
 	location: String,

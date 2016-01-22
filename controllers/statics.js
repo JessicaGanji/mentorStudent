@@ -23,5 +23,4 @@ getIndex: getIndex,
 getAbout: getAbout, 
 getResources: getResources,
 getQuiz: getQuiz
-
 }

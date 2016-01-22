@@ -7,10 +7,24 @@ var mentorsController = require('./controllers/mentors');
 
 router.route('/')
 	.get(mentorsController.getIndex)
-	.post(mentorsController.postProfile)
+	
+
+router.route('/signup')
+	.get(mentorsController.getSignup)
+	.post(mentorsController.postSignup)
+
+router.route('/login')
+	.get(mentorsController.getLogin)
+	.post(mentorsController.postLogin)
+
+router.route('/logout')
+	.get(mentorsController.getLogout)
 
 router.route('/:id')
-	.get(mentorsController.getShow)
+	.get(mentorsController.getProfile)
 	.patch(mentorsController.patchProfile)
 	.delete(mentorsController.deleteProfile)
+
+router.route('/:id/edit')
+	.get(mentorsController.getEdit)
 

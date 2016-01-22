@@ -65,9 +65,6 @@ function deleteProfile(request, response) {
 
 }
 
-
-
-
 module.exports = {
   getLogin: getLogin,
   postLogin: postLogin ,
