@@ -11,7 +11,7 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 ### Technologies Used
 
 * Node.js
-* 
+
 * Express
 
 * MongoDB
