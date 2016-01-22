@@ -56,16 +56,11 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 ``` email, password, first_name, last_name, location, area_of_focus, bio, website, parental_consent ```
 
 ##### Mentor Model
-``` email, password, first_name, last_name, headline, location, area_of_expertise, bio, personal_website, compary_website, experiences, languages, frameworks availibility, status, terms ```
+``` email, password, first_name, last_name, headline, location, area_of_expertise, bio, personal_website, compary_website, experiences, skills, availibility, status, terms ```
 
 -
 
 #### Wireframes
-
-![ Student.mentor() Landing Page ](readme/wf01.png)
-![ Student.mentor() Landing Page ](readme/wf02.png)
-![ Student.mentor() Landing Page ](readme/wf03.png)
-![ Student.mentor() Landing Page ](readme/wf04.png)
 
 ![ Student.mentor() Landing Page ](readme/ux01.png)
 ![ Student.mentor() Landing Page ](readme/ux02.png)
