@@ -30,7 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(flash()); 
 
-require('./config/passport')(passport);
+// require('./config/passport')(passport);
 
 mongoose.connect(mongoUri);
 
