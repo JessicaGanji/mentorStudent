@@ -19,8 +19,8 @@ function getQuiz(request, response) {
 }
 
 module.exports = {
-getIndex: getIndex,
-getAbout: getAbout, 
-getResources: getResources,
-getQuiz: getQuiz
+	getIndex: getIndex,
+	getAbout: getAbout, 
+	getResources: getResources,
+	getQuiz: getQuiz
 }
