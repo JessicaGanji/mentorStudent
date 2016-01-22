@@ -19,18 +19,18 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
-// app.set('views', path.join(__dirname, 'views'))
-// app.engine('ejs', require ('ejs').renderFile)
-// app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
+app.engine('ejs', require ('ejs').renderFile)
+app.set('view engine', 'ejs')
 
-// app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'))
 
-// app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' })); 
-// app.use(passport.initialize());
-// app.use(passport.session()); 
-// app.use(flash()); 
+app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' })); 
+app.use(passport.initialize());
+app.use(passport.session()); 
+app.use(flash()); 
 
-// require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 mongoose.connect(mongoUri);
 
