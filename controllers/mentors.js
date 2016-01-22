@@ -1,12 +1,12 @@
 var Mentor    = require('../models/mentor.js')
 var passport  = require("passport")
 
-// GET /signup
+// GET mentors/signup
 function getSignup(request, response) {
   response.render('mentors/signup.ejs', { message: request.flash('signupMessage') });
 }
 
-// POST /signup
+// POST mentors/signup
 function postSignup(request, response) {
   console.log(request.params)
 
@@ -19,12 +19,12 @@ function postSignup(request, response) {
   return signUpStrategy(request, response) 
 }
 
-// GET /login
+// GET mentors/login
 function getLogin(request, response) { 
   response.render('mentors/login.ejs', { message: request.flash('loginMessage') }); 
 }
 
-// POST /login 
+// POST mentors/login 
 function postLogin(request, response) {
   var loginProperty = passport.authenticate('local-login', {
     successRedirect : '/', 
@@ -35,7 +35,7 @@ function postLogin(request, response) {
   return loginProperty(request, response);
 }
 
-// GET /logout
+// GET mentors/logout
 function getLogout(request, response) {
   request.logout();
   response.redirect('/');

@@ -1,21 +1,21 @@
 // GET '/index'
 function getIndex(request, response) {
-  response.render('index.ejs');
+  response.render('statics/index.ejs');
 }
 
 // GET '/about'
 function getAbout(request, response) {
-  response.render('about.ejs');
+  response.render('statics/about.ejs');
 }
 
 // GET '/resources'
 function getResources(request, response) {
-  response.render('resources.ejs');
+  response.render('statics/resources.ejs');
 }
 
 // GET '/quiz'
 function getQuiz(request, response) {
-  response.render('quiz.ejs');
+  response.render('statics/quiz.ejs');
 }
 
 module.exports = {
