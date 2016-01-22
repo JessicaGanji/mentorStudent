@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
-var StudentSchema = mongoose.Schema({
+var Student = mongoose.Schema({
 	local: {
 		email        : String,
 		password     : String,
@@ -23,4 +23,4 @@ Student.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
 };
 
-module.exports = mongoose.model('Student', StudentSchema);
+module.exports = mongoose.model('Student', Student);
