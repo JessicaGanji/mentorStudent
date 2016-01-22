@@ -31,7 +31,8 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 // require('./config/passport')(passport);
 
-mongoose.connect(mongoUri)
+mongoose.connect(mongoUri);
+
 
 app.use('/students', studentsRouter)
 
