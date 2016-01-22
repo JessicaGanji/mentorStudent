@@ -22,12 +22,14 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(__dirname + '/public'))
 
-app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' })); 
-app.use(passport.initialize());
-app.use(passport.session()); 
-app.use(flash()); 
+// app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' })); 
+// app.use(passport.initialize());
+// app.use(passport.session()); 
+// app.use(flash()); 
 
 require('./config/passport')(passport);
 
-mongoose.connect(mongoUri)
+mongoose.connect(mongoUri);
 
+app.listen(port)
+console.log('The server is running on port' + port)
