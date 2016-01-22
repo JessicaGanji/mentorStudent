@@ -1,4 +1,5 @@
-var passport = require("passport")
+var Mentor    = require('../models/mentor.js')
+var passport  = require("passport")
 
 // GET /signup
 function getSignup(request, response) {

@@ -7,7 +7,6 @@ var mentorsController = require('./controllers/mentors');
 
 router.route('/')
 	.get(mentorsController.getIndex)
-	
 
 router.route('/signup')
 	.get(mentorsController.getSignup)

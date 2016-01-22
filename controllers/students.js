@@ -1,4 +1,5 @@
-var passport = require("passport")
+var Student   = require('../models/student.js')
+var passport  = require("passport")
 
 // GET /signup
 function getSignup(request, response) {
@@ -67,7 +68,7 @@ module.exports = {
   getSignup: getSignup,
   postSignup: postSignup,
   getLogout: getLogout,
-  getProfile: getShow,
+  getProfile: getProfile,
   getEdit: getEdit,
   patchProfile: patchProfile,
   deleteProfile: deleteProfile,
