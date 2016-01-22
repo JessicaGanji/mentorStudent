@@ -13,6 +13,7 @@ var port 		   = process.env.PORT || 3000;
 var mongoUri   	   = process.env.MONGOLAB_URI || 'mongodb://localhost/project_three';
 var studentsRouter = require('./config/routes/student_routes.js');
 var mentorsRouter  = require('./config/routes/mentor_routes.js');
+var staticsRouter  = require('./config/routes/static_routes.js');
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
@@ -33,6 +34,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 mongoose.connect(mongoUri);
 
+app.use('/', staticsRouter)
 app.use('/students', studentsRouter)
 app.use('/mentors', mentorsRouter)
 
