@@ -1,4 +1,4 @@
-var Mentor    = require('../models/mentor.js')
+var Mentor    = require('../models/user.js')
 var passport  = require('passport')
 
 // GET mentors/signup
