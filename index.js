@@ -19,6 +19,7 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
+app.use(ejsLayouts)
 app.set('views', path.join(__dirname, 'views'))
 app.engine('ejs', require ('ejs').renderFile)
 app.set('view engine', 'ejs')
