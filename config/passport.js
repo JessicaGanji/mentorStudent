@@ -21,13 +21,13 @@ passport.deserializeUser(function(id, callback){
   }
 });
 
-passport.use('student-local-signup',new LocalStrategy({
+passport.use('local-signup',new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true
 }, function(req, email, password, callback) {
   process.nextTick(function(){
-    Student.findOne({'student-local.email': email}, function(err,user){
+    Student.findOne({'local.email': email}, function(err,user){
       if (err) return callback(err);
       if (user) {
         return callback(null, false, req.flash('signupMessage', 'This email is already used'));
