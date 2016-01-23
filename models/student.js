@@ -6,13 +6,13 @@ var Student = mongoose.Schema({
 		email        : String,
 		password     : String,
 	},
-	first_name: String,
-	last_name: String,
+	first_name: { type: String, required: true },
+	last_name: { type: String, required: true },
 	location: String,
 	area_of_focus: String,
 	bio: String,
 	website: String,
-	parental_consent: Boolean
+	parental_consent: { type: Boolean, required: true }
 });
 
 Student.methods.encrypt = function(password) {

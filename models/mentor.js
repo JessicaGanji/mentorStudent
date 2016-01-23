@@ -6,19 +6,19 @@ var Mentor = mongoose.Schema({
 		email        : String,
 		password     : String,
 	},
-	first_name: String,
-	last_name: String,
+	first_name: { type: String, required: true },
+	last_name: { type: String, required: true },
 	headline: String,
 	location: String,
-	area_of_expertise: String,
+	area_of_expertise: { type: String, required: true },
 	bio: String,
 	personal_website: String,
 	compary_website: String,
 	experiences: String,
-	skills: String,
-	availibility: String,
-	status: Boolean,
-	terms: Boolean
+	skills: { type: String, required: true },
+	availibility: { type: String, required: true },
+	status: { type: Boolean, required: true },
+	terms: { type: Boolean, required: true }
 });
 
 Mentor.methods.encrypt = function(password) {
