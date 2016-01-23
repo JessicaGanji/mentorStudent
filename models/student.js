@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
 var Student = mongoose.Schema({
-	student-local: {
+	local: {
 		email        : String,
 		password     : String,
 	},
