@@ -16,11 +16,8 @@ var studentsRouter = require('./config/routes/student_routes.js');
 var mentorsRouter  = require('./config/routes/mentor_routes.js');
 var staticsRouter  = require('./config/routes/static_routes.js');
 
-var studentPassport  = require('./config/student_passport.js');
-var studentSetUp     = studentPassport(passport);
-
-var mentorPassport   = require('./config/mentor_passport.js');
-var mentorSetUp      = mentorPassport(passport);
+var userPassport   = require('./config/passport.js');
+var userSetUp      = userPassport(passport);
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
@@ -31,7 +28,6 @@ app.set('views', path.join(__dirname, 'views'))
 app.engine('ejs', require ('ejs').renderFile)
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
-
 
 app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' })); 
 app.use(passport.initialize());

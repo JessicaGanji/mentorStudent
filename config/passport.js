@@ -1,4 +1,4 @@
-console.log('hello Student')
+console.log('hello (config/passport.js)')
 
 var LocalStrategy  = require('passport-local').Strategy;
 var Student        = require('../models/student.js');
