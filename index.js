@@ -30,8 +30,8 @@ app.use(ejsLayouts)
 app.set('views', path.join(__dirname, 'views'))
 app.engine('ejs', require ('ejs').renderFile)
 app.set('view engine', 'ejs')
-
 app.use(express.static(__dirname + '/public'))
+
 
 app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' })); 
 app.use(passport.initialize());
