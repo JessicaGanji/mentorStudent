@@ -11,9 +11,16 @@ var path		   = require('path');
 var session        = require('express-session');
 var port 		   = process.env.PORT || 3000;
 var mongoUri   	   = process.env.MONGOLAB_URI || 'mongodb://localhost/project_three';
+
 var studentsRouter = require('./config/routes/student_routes.js');
 var mentorsRouter  = require('./config/routes/mentor_routes.js');
 var staticsRouter  = require('./config/routes/static_routes.js');
+
+var studentPassport  = require('./config/student_passport.js');
+var studentSetUp     = studentPassport(passport);
+
+var mentorPassport   = require('./config/mentor_passport.js');
+var mentorSetUp      = mentorPassport(passport);
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
@@ -31,9 +38,13 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(flash()); 
 
-// require('./config/passport')(passport);
-
 mongoose.connect(mongoUri);
+
+// This middleware will allow us to use the current user in the layout
+app.use(function (req, res, next) {
+  global.user = req.user;
+  next()
+});
 
 app.use('/', staticsRouter)
 app.use('/students', studentsRouter)

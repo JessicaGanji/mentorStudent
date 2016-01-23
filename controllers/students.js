@@ -1,5 +1,5 @@
 var Student   = require('../models/student.js')
-var passport  = require("passport")
+var passport  = require('passport')
 
 // GET /signup
 function getSignup(request, response) {
