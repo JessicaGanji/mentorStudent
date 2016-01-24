@@ -44,27 +44,27 @@ function getMentorLogout(request, response) {
 
 // GET /mentors
 function getMentorIndex(request, response) {
-
+  response.render('mentors/index.ejs');
 }
 
 // GET /mentors/:id
 function getMentorProfile(request, response) {
-
+  response.render('mentors/profile.ejs');
 }
 
 // GET /mentors/edit
 function getMentorEdit(request, response) {
-
+  response.render('mentors/edit.ejs');
 }
 
 // PATCH mentors
 function patchMentorProfile(request, response) {
-
+  response.redirect('/');
 }
 
 // DELETE mentors
 function deleteMentorProfile(request, response) {
-
+  response.redirect('/');
 }
 
 // Students
@@ -108,29 +108,24 @@ function getStudentLogout(request, response) {
   response.redirect('/');
 }
 
-// GET /students
-function getIndex(request, response) {
-
-}
-
 // GET /students/:id
 function getStudentProfile(request, response) {
-
+  response.render('students/profile.ejs');
 }
 
 // GET /students/edit
 function getStudentEdit(request, response) {
-
+  response.render('students/edit.ejs');
 }
 
 // PATCH student
 function patchStudentProfile(request, response) {
-
+  response.redirect('/');
 }
 
 // DELETE student
 function deleteStudentProfile(request, response) {
-
+  response.redirect('/');
 }
 
 module.exports = {

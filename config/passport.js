@@ -1,7 +1,7 @@
 console.log('hello (config/passport.js)')
 
 var LocalStrategy  = require('passport-local').Strategy;
-var Student        = require('../models/student.js');
+var User        = require('../models/user.js');
 
 module.exports = function(passport) {
 
@@ -10,7 +10,7 @@ module.exports = function(passport) {
   });
 
   passport.deserializeUser(function(id, callback) {
-    Student.findById(id, function(err, user) {
+    User.findById(id, function(err, user) {
         callback(err, user);
     });
   });
@@ -23,7 +23,7 @@ module.exports = function(passport) {
     process.nextTick(function() {
 
       // Find a user with this e-mail
-      Student.findOne({ 'local.email' :  email }, function(err, user) {
+      User.findOne({ 'local.email' :  email }, function(err, user) {
         if (err) return callback(err);
 
         // If there already is a user with this email 
@@ -33,7 +33,7 @@ module.exports = function(passport) {
         // There is no email registered with this email
 
           // Create a new user
-          var newUser            = new Student();
+          var newUser            = new User();
           newUser.local.email    = email;
           newUser.local.password = newUser.encrypt(password);
 
@@ -52,7 +52,7 @@ module.exports = function(passport) {
     passReqToCallback : true
   }, function(req, email, password, callback) {
     // Search for a user with this email
-    Student.findOne({ 'local.email' :  email }, function(err, user) {
+    User.findOne({ 'local.email' :  email }, function(err, user) {
       if (err) return callback(err);
      
      // If no user is found
