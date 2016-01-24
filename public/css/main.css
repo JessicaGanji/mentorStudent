@@ -10,6 +10,10 @@ body{
 	background-color: gray;
 }
 
+h1, h2, h3, h4, h5{
+	font-weight: 600;
+}
+
 section{
 	background-color: #fff;
 	padding: 15px 30px;
@@ -18,7 +22,8 @@ section{
 
 .background {
 	background-color: #f2f2f2;
-	padding: 30px 30px 15px 30px;
+	padding: 30px 30px;
+	/*padding: 30px 30px 15px 30px;*/
 }
 
 .part{
@@ -48,46 +53,84 @@ section{
 	color: #fff;
 }
 
-.navbar-default .navbar-nav > li > a{
-	color: #fff;	
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+	color: #fff;
 }
 
 
 
 /* Index */
 .hero{
-	background-color: gray;
+	background-image: url('../images/placeholder.png');
+	background-position: center center;
+	background-size: 100%;
 	padding-top: 100px;
 	padding-bottom: 100px;
-}
-
-.yin{
-	background-color: blue;
-}
-
-.yang{
-	background-color: red;
 }
 
 .yinyang{
 	padding: 15px 30px;
 	margin: 0;
+	height: 300px;
+}
+
+.yin{
+	background-color: #0A9E01;
+	color: #fff;
+}
+
+.yang{
+	background-color: #0A9E01;
+	color: #fff;
 }
 
 .student{
-	background-image: 
+	background-image: url('../images/mentor.jpg');
+	background-position: center center;
+	background-size: 100%;
 }
 
 .mentor{
-	background-image: 
+	background-image: url('../images/mentor.jpg');
+	background-position: center center;
+	background-size: 100%;
 }
 
-.center{
-	text-align: center
+.about{
+	padding-top: 30px;
+	text-align: center;
 }
 
-.center img{
-	width:100%;
+.icons{
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 60px;
+}
+
+.icons img{
+	display: block;
+	width: 100%;
+}
+
+.quiz{
+	text-align: center;
+	background-image: url('../images/placeholder.png');
+	background-position: center center;
+	background-size: 100%;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.video{
+	text-align: center;
+	background-color: #000;
+	background-size: 100%;
+	padding: 50px 200px;
+}
+
+.video h4{
+	color: #f2f2f2;
+	margin-top: 30px;
 }
 
 
