@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var passport = require("passport");
-var staticsController = require('../../controllers/statics');
+var passport = require('passport');
+var staticsController = require('../../controllers/statics.js');
 
 router.route('/')
 	.get(staticsController.getIndex)
