@@ -44,7 +44,13 @@ function getLogout(request, response) {
 
 // GET /mentors
 function getIndex(request, response) {
-  response.render('mentors/index.ejs');
+  
+  User.find({}, function (error, users) {
+    if(error) console.log(error)
+    response.render('mentors/index.ejs', {users: users})
+  })
+
+  // response.render('mentors/index.ejs');
 }
 
 // GET /mentors/:id
@@ -61,7 +67,6 @@ function getProfile(request, response) {
 
 // GET /mentors/edit
 function getEdit(request, response) {
-
 
   response.render('mentors/edit.ejs');
 }
