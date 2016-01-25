@@ -150,34 +150,59 @@ section{
 	padding: 50px 200px;
 }
 
+.testimonials{
+	text-align: center;
+	background-image: url('../images/placeholder.png');
+	background-position: center center;
+	background-size: 100%;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
 
 
 
 .round-form {
-border-radius: 8px;
+	border-radius: 8px;
 }
 
 .btn-primary{
-		background-color: #0A9E01;
-		border-width: 0px;
+	background-color: #0A9E01;
+	border-width: 0px;
 }
 
-.btn-primary:hover{
-		background-color: #0cc501;
-		border-width: 0px;
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+	background-color: #0cc501;
+	border-width: 0px;
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+	background-color: #0cc501;
+	border-width: 0px;	
+}
+
+/* Mentor Index/Profile */
+
+.namecard{
+	padding: 15px;
+	margin-bottom:15px;
 }
 
 .avatar{
-	width: 175px;
-	height: 175px;
+	width:25%;
 	display: block;
-	background-color: red;
 	float:left;
-	margin-right: 15px;
 }
 
 .avatar img {
 	width:100%;
+}
+
+.info{
+	width:75%;
+	display: block;
+	padding-left: 15px;
+	float:right;
 }
 
 
