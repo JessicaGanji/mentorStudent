@@ -55,7 +55,12 @@ function getProfile(request, response) {
 
   User.findById({_id: id}, function (error, user){
     if(error) console.log( "There is an error on this page because:" + error );
-    response.render('mentors/profile.ejs', {user: user})
+    if(error) {
+      response.redirect('/');
+    } else{
+      response.redirect('/mentors/:id');
+      response.render('/mentors/profile.ejs', {user: user});
+    }
   })
 }
 

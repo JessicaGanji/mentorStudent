@@ -19,7 +19,7 @@ router.route('/login')
 router.route('/logout')
 	.get(userController.getLogout)
 
-router.route('mentors/:id')
+router.route('/mentors/:id')
 	.get(userController.getProfile)
 	.patch(userController.patchProfile)
 	.delete(userController.deleteProfile)
