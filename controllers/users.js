@@ -3,12 +3,12 @@ var passport  = require('passport')
 
 // Mentors
 // GET /mentors/signup
-function getMentorSignup(request, response) {
+function getSignup(request, response) {
   response.render('mentors/signup.ejs', { message: request.flash('signupMessage') });
 }
 
 // POST /mentors/signup
-function postMentorSignup(request, response) {
+function postSignup(request, response) {
   console.log(request.params)
 
   var signUpStrategy = passport.authenticate('local-signup', {
@@ -21,12 +21,12 @@ function postMentorSignup(request, response) {
 }
 
 // GET /mentors/login
-function getMentorLogin(request, response) { 
+function getLogin(request, response) { 
   response.render('mentors/login.ejs', { message: request.flash('loginMessage') }); 
 }
 
 // POST /mentors/login 
-function postMentorLogin(request, response) {
+function postLogin(request, response) {
   var loginProperty = passport.authenticate('local-login', {
     successRedirect : '/', 
     failureRedirect : '/login', 
@@ -37,33 +37,33 @@ function postMentorLogin(request, response) {
 }
 
 // GET /mentors/logout
-function getMentorLogout(request, response) {
+function getLogout(request, response) {
   request.logout();
   response.redirect('/');
 }
 
 // GET /mentors
-function getMentorIndex(request, response) {
+function getIndex(request, response) {
   response.render('mentors/index.ejs');
 }
 
 // GET /mentors/:id
-function getMentorProfile(request, response) {
+function getProfile(request, response) {
   response.render('mentors/profile.ejs');
 }
 
 // GET /mentors/edit
-function getMentorEdit(request, response) {
+function getEdit(request, response) {
   response.render('mentors/edit.ejs');
 }
 
 // PATCH mentors
-function patchMentorProfile(request, response) {
+function patchProfile(request, response) {
   response.redirect('/');
 }
 
 // DELETE mentors
-function deleteMentorProfile(request, response) {
+function deleteProfile(request, response) {
   response.redirect('/');
 }
 
@@ -129,24 +129,14 @@ function deleteStudentProfile(request, response) {
 }
 
 module.exports = {
-  getMentorLogin: getMentorLogin,
-  postMentorLogin: postMentorLogin ,
-  getMentorSignup: getMentorSignup,
-  postMentorSignup: postMentorSignup,
-  getMentorLogout: getMentorLogout,
-  getMentorIndex: getMentorIndex,
-  getMentorProfile: getMentorProfile,
-  getMentorEdit: getMentorEdit,
-  patchMentorProfile: patchMentorProfile,
-  deleteMentorProfile: deleteMentorProfile,
-
-  getStudentLogin: getStudentLogin,
-  postStudentLogin: postStudentLogin ,
-  getStudentSignup: getStudentSignup,
-  postStudentSignup: postStudentSignup,
-  getStudentLogout: getStudentLogout,
-  getStudentProfile: getStudentProfile,
-  getStudentEdit: getStudentEdit,
-  patchStudentProfile: patchStudentProfile,
-  deleteStudentProfile: deleteStudentProfile,
+  getLogin: getLogin,
+  postLogin: postLogin ,
+  getSignup: getSignup,
+  postSignup: postSignup,
+  getLogout: getLogout,
+  getMentorIndex: getIndex,
+  getProfile: getProfile,
+  getEdit: getEdit,
+  patchProfile: patchProfile,
+  deleteProfile: deleteProfile,
 }
