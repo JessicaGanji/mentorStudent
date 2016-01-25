@@ -27,12 +27,12 @@ section{
 }
 
 .part{
-
+	padding: 15px;
+	margin-bottom:15px;
 }
 
 .piece{
 	margin-bottom:15px;
-
 }
 
 .request{
@@ -71,7 +71,7 @@ section{
 
 /* Index */
 .hero{
-	background-image: url('../images/hero.jpeg');
+	background-image: url('../images/hero.png');
 	background-position: center center;
 	background-size: 100%;
 	padding-top: 100px;
@@ -90,6 +90,10 @@ section{
 	padding: 15px 30px;
 	margin: 0;
 	height: 300px;
+}
+
+.yinyang h2 {
+	padding-top: 30px;
 }
 
 .yin{
