@@ -27,4 +27,7 @@ router.route('/:id')
 router.route('/:id/edit')
 	.get(userController.getEdit)
 
+router.route('/:id/message')
+	.get(userController.getMessage)
+
 module.exports = router

@@ -1,8 +1,6 @@
 var User      = require('../models/user.js')
 var passport  = require('passport')
 
-
-
 // GET /mentors/signup
 function getSignup(request, response) {
   response.render('mentors/signup.ejs', { message: request.flash('signupMessage') });
@@ -43,8 +41,6 @@ function getLogout(request, response) {
   response.redirect('/');
 }
 
-
-
 // GET /mentors
 function getIndex(request, response) {
   User.find({}, function (error, users) {
@@ -65,12 +61,19 @@ function getProfile(request, response) {
 
 // GET /mentors/:id/edit
 function getEdit(request, response) {
-  response.render('mentors/edit.ejs');
+  var id = request.params.id;
+
+  User.findById({_id: id}, function (error, user){
+    if(error) console.log( "There is an error on this page because:" + error );
+    response.render('mentors/edit.ejs', {user: user})
+  })
 }
 
 // PATCH mentors/:id
 function patchProfile(request, response) {
   var id = request.params.id;
+
+  // User.findByIdAndUpdate
 
   User.findById({ _id: id }, function (error, user){
     if(error) console.log( "There is an error on this page becuase:" + error );
@@ -110,7 +113,15 @@ function deleteProfile(request, response) {
   })
 }
 
+// GET mentors/:id/message
+function getMessage(request, response) {
+  var id = request.params.id;
 
+  User.findById({_id: id}, function (error, user){
+    if(error) console.log( "There is an error on this page because:" + error );
+    response.render('mentors/message.ejs', {user: user})
+  })
+}
 
 module.exports = {
   getLogin: getLogin,
@@ -123,6 +134,5 @@ module.exports = {
   getEdit: getEdit,
   patchProfile: patchProfile,
   deleteProfile: deleteProfile,
+  getMessage: getMessage
 }
-
-
