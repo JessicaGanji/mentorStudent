@@ -3,28 +3,28 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var passport = require('passport');
-var mentorsController = require('../../controllers/users.js');
+var userController = require('../../controllers/users.js');
 
 router.route('/')
-	.get(mentorsController.getIndex)
+	.get(userController.getIndex)
 
 router.route('/signup')
-	.get(mentorsController.getSignup)
-	.post(mentorsController.postMentorSignup)
+	.get(userController.getSignup)
+	.post(userController.postMentorSignup)
 
 router.route('/login')
-	.get(mentorsController.getLogin)
-	.post(mentorsController.postLogin)
+	.get(userController.getLogin)
+	.post(userController.postLogin)
 
 router.route('/logout')
-	.get(mentorsController.getLogout)
+	.get(userController.getLogout)
 
 router.route('/:id')
-	.get(mentorsController.getProfile)
-	.patch(mentorsController.patchProfile)
-	.delete(mentorsController.deleteProfile)
+	.get(userController.getProfile)
+	.patch(userController.patchProfile)
+	.delete(userController.deleteProfile)
 
 router.route('/:id/edit')
-	.get(mentorsController.getEdit)
+	.get(userController.getEdit)
 
 module.exports = router
