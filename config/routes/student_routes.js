@@ -2,26 +2,26 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-//var passport = require("passport");
-var studentsController = require('../../controllers/students')
+var passport = require('passport');
+var studentsController = require('../../controllers/users.js')
 	
 router.route('/signup')
-	.get(studentsController.getSignup)
-	.post(studentsController.postSignup)
+	.get(studentsController.getStudentSignup)
+	.post(studentsController.postStudentSignup)
 
 router.route('/login')
-	.get(studentsController.getLogin)
-	.post(studentsController.postLogin)
+	.get(studentsController.getStudentLogin)
+	.post(studentsController.postStudentLogin)
 
 router.route('/logout')
-	.get(studentsController.getLogout)
+	.get(studentsController.getStudentLogout)
 
 router.route('/:id')
-	.get(studentsController.getProfile)
-	.patch(studentsController.patchProfile)
-	.delete(studentsController.deleteProfile)
+	.get(studentsController.getStudentProfile)
+	.patch(studentsController.patchStudentProfile)
+	.delete(studentsController.deleteStudentProfile)
 
 router.route('/:id/edit')
-	.get(studentsController.getEdit)
+	.get(studentsController.getStudentEdit)
 
 module.exports = router
