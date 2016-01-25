@@ -6,25 +6,25 @@ var passport = require('passport');
 var mentorsController = require('../../controllers/users.js');
 
 router.route('/')
-	.get(mentorsController.getMentorIndex)
+	.get(mentorsController.getIndex)
 
 router.route('/signup')
-	.get(mentorsController.getMentorSignup)
+	.get(mentorsController.getSignup)
 	.post(mentorsController.postMentorSignup)
 
 router.route('/login')
-	.get(mentorsController.getMentorLogin)
-	.post(mentorsController.postMentorLogin)
+	.get(mentorsController.getLogin)
+	.post(mentorsController.postLogin)
 
 router.route('/logout')
-	.get(mentorsController.getMentorLogout)
+	.get(mentorsController.getLogout)
 
 router.route('/:id')
-	.get(mentorsController.getMentorProfile)
-	.patch(mentorsController.patchMentorProfile)
-	.delete(mentorsController.deleteMentorProfile)
+	.get(mentorsController.getProfile)
+	.patch(mentorsController.patchProfile)
+	.delete(mentorsController.deleteProfile)
 
 router.route('/:id/edit')
-	.get(mentorsController.getMentorEdit)
+	.get(mentorsController.getEdit)
 
 module.exports = router
