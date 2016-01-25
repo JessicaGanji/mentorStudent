@@ -25,20 +25,23 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/about">About</a></li>
               <li><a href="/mentors">Mentors</a></li>
               <li><a href="/resources">Resources</a></li>
-              <li><a href="/login">Log In</a></li>
-              <li><a href="/mentors/login">Become a Mentor</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Profile</a></li>
-                  <li><a href="#">Settings</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Log Out</a></li>
-                </ul>
-              </li>
+              <li><a href="/about">About</a></li>
+              <% if (user) { %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/mentors/profile">Profile</a></li>
+                    <li><a href="/mentors/user/edit">Settings</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Log Out</a></li>
+                  </ul>
+                </li>
+              <% } else { %>
+                <li><a href="/mentors/login">Log In</a></li>
+                <li class="pop"><a href="/mentors/signup" class="pop">Become a Mentor</a></li>
+              <% } %>
             </ul>
           </div>
         </div>
@@ -50,8 +53,7 @@
     <div class="row">
       <footer class="col-md-12">
         <p>( Social Media Icons )</p>
-        <p>© 2016 Student.mentor()</p>
-        <p>MENTORING LOGIN, EMAIL SIGN UP, TERMS OF SERVICE, PRIVACY POLICY</p>
+        <p>© 2016 Student.mentor(). All rights reserved. Sitemap | Terms of Use | Privacy Policy</p>
       </footer>
     </div>
 

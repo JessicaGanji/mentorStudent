@@ -4,7 +4,7 @@ var passport  = require('passport')
 // Mentors
 // GET /mentors/signup
 function getMentorSignup(request, response) {
-  response.render('students/signup.ejs', { message: request.flash('signupMessage') });
+  response.render('mentors/signup.ejs', { message: request.flash('signupMessage') });
 }
 
 // POST /mentors/signup
@@ -22,7 +22,7 @@ function postMentorSignup(request, response) {
 
 // GET /mentors/login
 function getMentorLogin(request, response) { 
-  response.render('students/login.ejs', { message: request.flash('loginMessage') }); 
+  response.render('mentors/login.ejs', { message: request.flash('loginMessage') }); 
 }
 
 // POST /mentors/login 
