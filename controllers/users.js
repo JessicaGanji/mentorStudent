@@ -1,19 +1,17 @@
 var User      = require('../models/user.js')
 var passport  = require('passport')
 
-
-
-// GET /mentors/signup
+// GET /signup
 function getSignup(request, response) {
   response.render('mentors/signup.ejs', { message: request.flash('signupMessage') });
 }
 
-// POST /mentors/signup
+// POST /signup
 function postSignup(request, response) {
   console.log(request.params)
 
   var signUpStrategy = passport.authenticate('local-signup', {
-    successRedirect : '/', 
+    successRedirect : '/mentors', 
     failureRedirect : '/signup', 
     failureFlash : true 
   });
@@ -21,15 +19,15 @@ function postSignup(request, response) {
   return signUpStrategy(request, response) 
 }
 
-// GET /mentors/login
+// GET /login
 function getLogin(request, response) { 
   response.render('mentors/login.ejs', { message: request.flash('loginMessage') }); 
 }
 
-// POST /mentors/login 
+// POST /login 
 function postLogin(request, response) {
   var loginProperty = passport.authenticate('local-login', {
-    successRedirect : '/', 
+    successRedirect : '/mentors', 
     failureRedirect : '/login', 
     failureFlash : true 
   });
@@ -42,8 +40,6 @@ function getLogout(request, response) {
   request.logout();
   response.redirect('/');
 }
-
-
 
 // GET /mentors
 function getIndex(request, response) {
@@ -59,18 +55,30 @@ function getProfile(request, response) {
 
   User.findById({_id: id}, function (error, user){
     if(error) console.log( "There is an error on this page because:" + error );
-    response.render('mentors/profile.ejs', {user: user})
+    if(error) {
+      response.redirect('/');
+    } else{
+      response.redirect('/mentors/:id');
+      response.render('/mentors/profile.ejs', {user: user});
+    }
   })
 }
 
 // GET /mentors/:id/edit
 function getEdit(request, response) {
-  response.render('mentors/edit.ejs');
+  var id = request.params.id;
+
+  User.findById({_id: id}, function (error, user){
+    if(error) console.log( "There is an error on this page because:" + error );
+    response.render('mentors/edit.ejs', {user: user})
+  })
 }
 
 // PATCH mentors/:id
 function patchProfile(request, response) {
   var id = request.params.id;
+
+  // User.findByIdAndUpdate
 
   User.findById({ _id: id }, function (error, user){
     if(error) console.log( "There is an error on this page becuase:" + error );
@@ -110,7 +118,15 @@ function deleteProfile(request, response) {
   })
 }
 
+// GET mentors/:id/message
+function getMessage(request, response) {
+  var id = request.params.id;
 
+  User.findById({_id: id}, function (error, user){
+    if(error) console.log( "There is an error on this page because:" + error );
+    response.render('mentors/message.ejs', {user: user})
+  })
+}
 
 module.exports = {
   getLogin: getLogin,
@@ -123,6 +139,5 @@ module.exports = {
   getEdit: getEdit,
   patchProfile: patchProfile,
   deleteProfile: deleteProfile,
+  getMessage: getMessage
 }
-
-
