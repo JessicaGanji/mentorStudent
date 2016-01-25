@@ -1,17 +1,17 @@
 var User      = require('../models/user.js')
 var passport  = require('passport')
 
-// GET /mentors/signup
+// GET /signup
 function getSignup(request, response) {
   response.render('mentors/signup.ejs', { message: request.flash('signupMessage') });
 }
 
-// POST /mentors/signup
+// POST /signup
 function postSignup(request, response) {
   console.log(request.params)
 
   var signUpStrategy = passport.authenticate('local-signup', {
-    successRedirect : '/', 
+    successRedirect : '/mentors', 
     failureRedirect : '/signup', 
     failureFlash : true 
   });
@@ -19,15 +19,15 @@ function postSignup(request, response) {
   return signUpStrategy(request, response) 
 }
 
-// GET /mentors/login
+// GET /login
 function getLogin(request, response) { 
   response.render('mentors/login.ejs', { message: request.flash('loginMessage') }); 
 }
 
-// POST /mentors/login 
+// POST /login 
 function postLogin(request, response) {
   var loginProperty = passport.authenticate('local-login', {
-    successRedirect : '/', 
+    successRedirect : '/mentors', 
     failureRedirect : '/login', 
     failureFlash : true 
   });

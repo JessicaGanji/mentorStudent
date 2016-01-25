@@ -6,11 +6,12 @@ var User = mongoose.Schema({
 		email        : String,
 		password     : String,
 	},
-	first_name: { type: String, required: true },
-	last_name: { type: String, required: true },
-	headline: { type: String, required: true },
+	password_confirmation: String,
+	first_name: String,
+	last_name: String,
+	headline: String,
 	location: String,
-	focus: { type: String, required: true },
+	focus: String,
 	intro: String,
 	company: String,
 	company_link: String,
@@ -19,8 +20,8 @@ var User = mongoose.Schema({
 	experiences: String,
 	skills: String,
 	availibility: String,
-	status: { type: Boolean, required: true },
-	terms: { type: Boolean, required: true }
+	status: Boolean,
+	terms: Boolean
 });
 
 User.methods.encrypt = function(password) {

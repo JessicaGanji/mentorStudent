@@ -5,7 +5,7 @@ var methodOverride = require('method-override');
 var passport = require('passport');
 var userController = require('../../controllers/users.js');
 
-router.route('/')
+router.route('/mentors')
 	.get(userController.getIndex)
 
 router.route('/signup')
@@ -19,15 +19,15 @@ router.route('/login')
 router.route('/logout')
 	.get(userController.getLogout)
 
-router.route('/:id')
+router.route('mentors/:id')
 	.get(userController.getProfile)
 	.patch(userController.patchProfile)
 	.delete(userController.deleteProfile)
 
-router.route('/:id/edit')
+router.route('/mentors/:id/edit')
 	.get(userController.getEdit)
 
-router.route('/:id/message')
+router.route('/mentors/:id/message')
 	.get(userController.getMessage)
 
 module.exports = router
