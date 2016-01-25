@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', staticRouter)
-app.use('/mentors', userRouter)
+app.use('/', userRouter)
 
 app.listen(port)
 console.log('The server is running on port' + port)

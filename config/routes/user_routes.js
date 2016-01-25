@@ -5,13 +5,14 @@ var methodOverride = require('method-override');
 var passport = require('passport');
 var userController = require('../../controllers/users.js');
 
-router.route('/')
+router.route('/mentors')
 	.get(userController.getIndex)
+	
 
 router.route('/signup')
 	.get(userController.getSignup)
 	.post(userController.postSignup)
-
+	
 router.route('/login')
 	.get(userController.getLogin)
 	.post(userController.postLogin)
