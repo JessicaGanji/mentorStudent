@@ -60,7 +60,7 @@ function getProfile(request, response) {
   User.findById({_id: id}, function (error, user){
     if(error) console.log( "There is an error on this page because:" + error );
     response.render('mentors/profile.ejs', {user: user})
-  }
+  })
 }
 
 // GET /mentors/:id/edit
@@ -118,7 +118,7 @@ module.exports = {
   getSignup: getSignup,
   postSignup: postSignup,
   getLogout: getLogout,
-  getMentorIndex: getIndex,
+  getIndex: getIndex,
   getProfile: getProfile,
   getEdit: getEdit,
   patchProfile: patchProfile,

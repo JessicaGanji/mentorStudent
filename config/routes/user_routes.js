@@ -10,7 +10,7 @@ router.route('/')
 
 router.route('/signup')
 	.get(userController.getSignup)
-	.post(userController.postMentorSignup)
+	.post(userController.postSignup)
 
 router.route('/login')
 	.get(userController.getLogin)

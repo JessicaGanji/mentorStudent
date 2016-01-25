@@ -13,7 +13,7 @@ var port 		   = process.env.PORT || 3000;
 var mongoUri   	   = process.env.MONGOLAB_URI || 'mongodb://localhost/project_three';
 
 var userRouter     = require('./config/routes/user_routes.js');
-var staticRouter  = require('./config/routes/static_routes.js');
+var staticRouter   = require('./config/routes/static_routes.js');
 
 var userPassport   = require('./config/passport.js');
 var userSetUp      = userPassport(passport);
