@@ -1,7 +1,8 @@
 var User      = require('../models/user.js')
 var passport  = require('passport')
 
-// Mentors
+
+
 // GET /mentors/signup
 function getSignup(request, response) {
   response.render('mentors/signup.ejs', { message: request.flash('signupMessage') });
@@ -42,79 +43,74 @@ function getLogout(request, response) {
   response.redirect('/');
 }
 
+
+
 // GET /mentors
 function getIndex(request, response) {
-  
   User.find({}, function (error, users) {
-    if(error) console.log(error)
+    if(error) console.log(error);
     response.render('mentors/index.ejs', {users: users})
   })
-
-  // response.render('mentors/index.ejs');
 }
 
 // GET /mentors/:id
 function getProfile(request, response) {
   var id = request.params.id;
 
-  User.findById({ _id: id}, function (error, user){
-    if(error) response.json({ message: "There is an error on this page because:" + error });
-    response.json({ user: user })
+  User.findById({_id: id}, function (error, user){
+    if(error) console.log( "There is an error on this page because:" + error );
+    response.render('mentors/profile.ejs', {user: user})
   }
-
-  response.render('mentors/profile.ejs');
 }
 
-// GET /mentors/edit
+// GET /mentors/:id/edit
 function getEdit(request, response) {
-
   response.render('mentors/edit.ejs');
 }
 
-// PATCH mentors
+// PATCH mentors/:id
 function patchProfile(request, response) {
   var id = request.params.id;
 
   User.findById({ _id: id }, function (error, user){
-    if(error) response.json({ message: "There is an error on this page becuase:" + error });
+    if(error) console.log( "There is an error on this page becuase:" + error );
 
-    if(request.body.first_name) user.first_name = request.body.first_name;
-    if(request.body.last_name) user.last_name = request.body.last_name;
-    if(request.body.headline) user.headline = request.body.headline;
-    if(request.body.location) user.location = request.body.location;
-    if(request.body.focus) user.focus = request.body.focus;
-    if(request.body.intro) user.intro = request.body.intro;
-    if(request.body.company) user.company = request.body.company;
-    if(request.body.company_website) user.company_website = request.body.company_website;
-    if(request.body.education) user.experiences = request.body.experiences;
-    if(request.body.personal_website) user.personal_website = request.body.personal_website;
-    if(request.body.experiences) user.experiences = request.body.experiences;
-    if(request.body.skills) user.skills = request.body.skills;
-    if(request.body.availibility) user.availibility = request.body.availibility;
-    if(request.body.status) user.status = request.body.status;
-    if(request.body.terms) user.terms = request.body.terms;
+    if(request.body.first_name) user.first_name         = request.body.first_name;
+    if(request.body.last_name) user.last_name           = request.body.last_name;
+    if(request.body.headline) user.headline             = request.body.headline;
+    if(request.body.location) user.location             = request.body.location;
+    if(request.body.focus) user.focus                   = request.body.focus;
+    if(request.body.intro) user.intro                   = request.body.intro;
+    if(request.body.company) user.company               = request.body.company;
+    if(request.body.company_link) user.company_link     = request.body.company_link;
+    if(request.body.education) user.experiences         = request.body.experiences;
+    if(request.body.personal_link) user.personal_link   = request.body.personal_link;
+    if(request.body.experiences) user.experiences       = request.body.experiences;
+    if(request.body.skills) user.skills                 = request.body.skills;
+    if(request.body.availibility) user.availibility     = request.body.availibility;
+    if(request.body.status) user.status                 = request.body.status;
+    if(request.body.terms) user.terms                   = request.body.terms;
 
     user.save( function (error){
-      if(error) response.json({ message: "Could not save user becuase:" + error });
+      if(error) console.log( "Could not save user becuase:" + error );
       response.json({ message: "User has been updated!" });
+      response.redirect('mentors/profile.ejs');
     })
-
   })
-  
-  response.redirect('mentors/profile.ejs');
 }
 
-// DELETE mentors
+// DELETE mentors/:id
 function deleteProfile(request, response) {
   var id = request.params.id;
 
   User.remove({_id: id}, function (error) {
-    if(error) response.json({ message: "User has not been deleted due to the following error:" + error });
-    response.json({ message: "User has been deleted." })
+    if(error) console.log( "User has not been deleted due to the following error:" + error );
+    console.log( "User has been successfully deleted." )
+    response.redirect('/');
   })
-
-  response.redirect('/');
 }
+
+
 
 module.exports = {
   getLogin: getLogin,
@@ -128,3 +124,5 @@ module.exports = {
   patchProfile: patchProfile,
   deleteProfile: deleteProfile,
 }
+
+

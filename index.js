@@ -12,9 +12,8 @@ var session        = require('express-session');
 var port 		   = process.env.PORT || 3000;
 var mongoUri   	   = process.env.MONGOLAB_URI || 'mongodb://localhost/project_three';
 
-var studentsRouter = require('./config/routes/student_routes.js');
-var mentorsRouter  = require('./config/routes/mentor_routes.js');
-var staticsRouter  = require('./config/routes/static_routes.js');
+var userRouter     = require('./config/routes/user_routes.js');
+var staticRouter  = require('./config/routes/static_routes.js');
 
 var userPassport   = require('./config/passport.js');
 var userSetUp      = userPassport(passport);
@@ -42,9 +41,8 @@ app.use(function (req, res, next) {
   next()
 });
 
-app.use('/', staticsRouter)
-app.use('/students', studentsRouter)
-app.use('/mentors', mentorsRouter)
+app.use('/', staticRouter)
+app.use('/mentors', userRouter)
 
 app.listen(port)
 console.log('The server is running on port' + port)
