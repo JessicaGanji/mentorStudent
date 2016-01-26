@@ -4,8 +4,8 @@ var Resource = require('./resource.js');
 
 var User = mongoose.Schema({
 	local: {
-		email        : String,
-		password     : String,
+		email: String,
+		password: String,
 	},
 	password_confirmation: String,
 	first_name: String,
@@ -24,8 +24,8 @@ var User = mongoose.Schema({
 	availibility: String,
 	time_zone: String,
 	status: Boolean,
-	terms: Boolean 
-	// resources: [Resource]
+	terms: Boolean,
+	resources: [Resource]
 });
 
 User.methods.encrypt = function(password) {

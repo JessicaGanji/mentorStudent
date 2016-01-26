@@ -11,7 +11,7 @@ function getNew(request, response) {
 };
 
 // POST /api/new
-function getNew(request, response) {
+function postAPI(request, response) {
   response.json({message: "blank"});
 };
 

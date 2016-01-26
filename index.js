@@ -16,8 +16,8 @@ var staticRouter  	= require('./config/routes/static_routes.js');
 var userRouter			= require('./config/routes/user_routes.js');
 var userPassport		= require('./config/passport.js');
 var userSetUp				= userPassport(passport);
-// var resourceRouter 	= require('./config/routes/resource_routes.js');
-// var apiRouter				= require('./config/routes/api_routes.js');
+var resourceRouter 	= require('./config/routes/resource_routes.js');
+var apiRouter				= require('./config/routes/api_routes.js');
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
@@ -44,9 +44,9 @@ app.use(function (req, res, next) {
 
 app.use('/', staticRouter)
 app.use('/', userRouter)
-// app.use('/', resourceRouter)
-// app.use('/', apiRouter)
+app.use('/', resourceRouter)
+app.use('/', apiRouter)
 
 app.listen(port)
-console.log('The server is running on port' + port)
+console.log('Magic is happening on port' + port)
 

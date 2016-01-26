@@ -6,18 +6,18 @@ var passport = require('passport');
 var resourceController = require('../../controllers/resources.js');
 
 router.route('/resources')
-	.get(userController.getIndex)
+	.get(resourceController.getIndex)
 
 router.route('/resources/:id/new')
-	.get(userController.getNew)
-	.post(userController.postResource)
+	.get(resourceController.getNew)
+	.post(resourceController.postResource)
 
 router.route('/resources/:id')
-	.get(userController.getResource)
-	.delete(userController.deleteResource)
+	.get(resourceController.getResource)
+	.delete(resourceController.deleteResource)
 
 router.route('/resources/:id/edit')
-	.get(userController.getEdit)
-	.put(userController.putResource)
+	.get(resourceController.getEdit)
+	.put(resourceController.putResource)
 
 module.exports = router
