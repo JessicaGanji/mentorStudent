@@ -74,7 +74,8 @@ function getEdit(request, response) {
 }
 
 // PATCH mentors/:id
-function patchProfile(request, response) {
+function putProfile(request, response) {
+  console.log('puttttttttttttttttttttttttt')
   var id = request.params.id;
 
   User.findById({ _id: id }, function (error, user){
@@ -136,7 +137,7 @@ module.exports = {
   getIndex: getIndex,
   getProfile: getProfile,
   getEdit: getEdit,
-  patchProfile: patchProfile,
+  putProfile: putProfile,
   deleteProfile: deleteProfile,
   getMessage: getMessage
 }

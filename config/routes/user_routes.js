@@ -27,7 +27,7 @@ router.route('/mentors/:id/message')
 
 router.route('/mentors/:id')
 	.get(userController.getProfile)
+	.put(userController.putProfile)
 	.delete(userController.deleteProfile)
-	.patch(userController.patchProfile)
 
 module.exports = router

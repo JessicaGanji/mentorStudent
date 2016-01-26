@@ -4,13 +4,15 @@
   <section class="col-md-6 round-form">
     <h3>Step Two: Edit your Profile</h3>
 
-    <form method="patch" action="/mentors/:id">
+    <form method="put" action="/mentors/<%= user._id %>">
+<!--       <input type="hidden" name="_method" value="put">
+ -->      
       <div class="form-group">
         <label for="first_name">First Name</label>
         <input class="form-control" type="text" name="first_name" id="first_name">
       </div>
 
-      <div class="form-group">
+<!--       <div class="form-group">
         <label for="last_name">Last Name</label>
         <input class="form-control" type="text" name="last_name" id="last_name">
       </div>
@@ -89,7 +91,13 @@
 
       <div class="form-group">
         <label for="time_zone">Time Zone</label>
-        <input class="form-control" type="text" name="time_zone" id="time_zone">
+        <select class="form-control" name="time_zone" id="time_zone">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
       </div> 
 
       <div class="form-group">
@@ -114,7 +122,7 @@
         </label>
       </div>
 
-      <hr>
+      <hr> -->
 
       <input class="btn btn-default" type="submit">
     </form>

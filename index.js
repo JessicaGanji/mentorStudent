@@ -17,6 +17,8 @@ var userRouter     = require('./config/routes/user_routes.js');
 var userPassport   = require('./config/passport.js');
 var userSetUp      = userPassport(passport);
 
+var apiRouter   = require('./config/routes/api_routes.js');
+
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
