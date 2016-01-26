@@ -1,10 +1,12 @@
-var User      = require('../models/user.js')
-// var Resource  = require('../models/resource.js')
+var Resource  = require('../models/user.js')
 var passport  = require('passport')
 
 // GET /resources
 function getIndex (request, response){
-
+  Resource.find({}, function (error, resources) {
+    if(error) console.log(error);
+    response.render('mentors/index.ejs', {resources: resources})
+  })
 }
 
 // GET /resources/:id/new
@@ -28,7 +30,7 @@ function getResource (request, response){
 }
 
 // PATCH /resources/:id
-function patchResource (request, response){
+function putResource (request, response){
 
 }
 
@@ -43,6 +45,6 @@ module.exports = {
 	postResource, postResource
 	getEdit, getEdit
 	getResource, getResource
-	patchResource, patchResource
+	putResource, putResource
 	deleteResource, deleteResource
 }

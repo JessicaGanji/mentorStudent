@@ -65,6 +65,8 @@ function getProfile(request, response) {
 
 // GET /mentors/:id/edit
 function getEdit(request, response) {
+  console.log('getEdit getEdit getEdit getEdit')
+
   var id = request.params.id;
 
   User.findById({_id: id}, function (error, user){
@@ -73,9 +75,9 @@ function getEdit(request, response) {
   })
 }
 
-// PATCH /mentors/:id
+// PUT /mentors/:id
 function putProfile(request, response) {
-  console.log('puttttttttttttttttttttttttt')
+  console.log('putProfile putProfile putProfile putProfile')
   var id = request.params.id;
 
   User.findById({ _id: id }, function (error, user){
@@ -102,7 +104,6 @@ function putProfile(request, response) {
     user.save( function (error){
       if(error) console.log( "Could not save user becuase:" + error );
       response.json({ message: "User has been updated!" });
-      response.render('mentors/profile.ejs');
     })
   })
 }
