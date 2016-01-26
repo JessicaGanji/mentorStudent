@@ -2,37 +2,37 @@ var User      = require('../models/user.js')
 // var Resource  = require('../models/resource.js')
 var passport  = require('passport')
 
-// GET resources
+// GET /resources
 function getIndex (request, response){
 
 }
 
-// GET resources/:id/new
+// GET /resources/:id/new
 function getNew (request, response){
 
 }
 
-// POST resources/:id/new
+// POST /resources/:id/new
 function postResource (request, response){
 
 }
 
-// GET resources/:id/edit
+// GET /resources/:id/edit
 function getEdit (request, response){
 
 }
 
-// GET resources/:id
+// GET /resources/:id
 function getResource (request, response){
 
 }
 
-// PATCH resources/:id
+// PATCH /resources/:id
 function patchResource (request, response){
 
 }
 
-// DELETE resources/:id
+// DELETE /resources/:id
 function deleteResource (request, response){
 
 }

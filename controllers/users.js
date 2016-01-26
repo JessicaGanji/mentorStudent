@@ -73,7 +73,7 @@ function getEdit(request, response) {
   })
 }
 
-// PATCH mentors/:id
+// PATCH /mentors/:id
 function putProfile(request, response) {
   console.log('puttttttttttttttttttttttttt')
   var id = request.params.id;
@@ -107,7 +107,7 @@ function putProfile(request, response) {
   })
 }
 
-// DELETE mentors/:id
+// DELETE /mentors/:id
 function deleteProfile(request, response) {
   var id = request.params.id;
 
@@ -118,7 +118,7 @@ function deleteProfile(request, response) {
   })
 }
 
-// GET mentors/:id/message
+// GET /mentors/:id/message
 function getMessage(request, response) {
   var id = request.params.id;
 
