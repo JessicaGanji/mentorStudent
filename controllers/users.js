@@ -85,6 +85,7 @@ function patchProfile(request, response) {
     if(request.body.first_name) user.first_name         = request.body.first_name;
     if(request.body.last_name) user.last_name           = request.body.last_name;
     if(request.body.headline) user.headline             = request.body.headline;
+    if(request.body.photo) user.photo                   = request.body.photo;
     if(request.body.location) user.location             = request.body.location;
     if(request.body.focus) user.focus                   = request.body.focus;
     if(request.body.intro) user.intro                   = request.body.intro;
