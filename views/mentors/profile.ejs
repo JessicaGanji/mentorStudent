@@ -49,10 +49,21 @@
 		<section class="btn-primary">
 	    <a href="mentors/<%= user._id %>/edit"><h4>Edit</h4></a>
 		</section>
-		<section class="btn-primary">
-	    <a href="mentors/<%= user._id %>"><h4>Delete</h4></a>
-		</section>
+		<% console.log(user._id) %>
+		<button class="delBtn" id="<%= user._id %>">Delete Profile</button>
 		<% } %>
-
-
+		<script> 
+		$('.delBtn').click(callDelete)
+			function callDelete(){
+			    console.log(this.id)
+			    $.ajax({
+			        url: '/mentors/' + this.id,
+			        type: 'DELETE',
+			        success: function(result) {
+			            console.log("DELETED")
+			            window.location = "/mentors"
+			        }
+			    })
+			};
+		</script>
 </section>
