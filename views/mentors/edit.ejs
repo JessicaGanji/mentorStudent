@@ -4,14 +4,128 @@
   <section class="col-md-6 round-form">
     <h3>Step Two: Edit your Profile</h3>
 
+    <form method="post" action="/mentors/<%= user._id %>">
+      <input type="hidden" name="_method" value="put">
       <div class="form-group">
         <label for="first_name">Frist Name</label>
         <input class="form-control" type="text" name="first_name" id="first_name">
       </div>
 
-      <input class="btn btn-default" type="submit">
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input class="form-control" type="text" name="last_name" id="last_name">
+      </div>
+      
+      <div class="form-group">
+        <label for="photo">Profile Photo</label>
+        <input type="file" id="photo">
+        <p class="help-block">Example block-level help text here.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="headline">Headline</label>
+        <input class="form-control" type="text" name="headline" id="headline">
+      </div>
+
+      <div class="form-group">
+        <label for="intro">Introduction</label>
+        <input class="form-control" type="text" name="intro" id="intro">
+      </div>
+
+      <div class="form-group">
+        <label for="focus">Focus</label>
+        <select class="form-control" name="focus" id="focus">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="company">Company</label>
+        <input class="form-control" type="text" name="company" id="company">
+      </div> 
+
+      <div class="form-group">
+        <label for="company_link">Company Website</label>
+        <input class="form-control" type="url" name="company_link" id="company_link">
+      </div> 
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input class="form-control" type="text" placeholder="zip code" name="location" id="location">
+      </div>
+
+      <div class="form-group">
+        <label for="education">Education</label>
+        <input class="form-control" type="text" name="education" id="education">
+      </div> 
+
+      <div class="form-group">
+        <label for="personal_link">Personal Website</label>
+        <input class="form-control" type="url" name="personal_link" id="personal_link">
+      </div> 
+
+      <div class="form-group">
+        <label for="experiences">Experiences</label>
+        <input class="form-control" type="text_area" name="experiences" id="experiences">
+      </div> 
+
+      <div class="form-group">
+        <label for="skills">Skills</label>
+        <div class="checkbox">
+          <label><input type="checkbox" value="Javascript" name="skills" id="skills">Javascript</label>
+          <label><input type="checkbox" value="Ruby" name="skills" id="skills">Ruby</label>
+          <label><input type="checkbox" value="Python" name="skills" id="skills">Python</label>
+          <label><input type="checkbox" value="HTML/CSS" name="skills" id="skills">HTML/CSS</label>
+        </div>
+      </div> 
+
+      <div class="form-group">
+        <label for="availibility">Availibility</label>
+        <input class="form-control" type="text" name="availibility" id="availibility">
+      </div> 
+
+      <div class="form-group">
+        <label for="time_zone">Time Zone</label>
+        <select class="form-control" name="time_zone" id="time_zone">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div> 
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <div class="radio">
+          <label>
+            <input type="radio" name="status" id="status" value="true" checked>
+            I am availible to be a mentor.
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="status" id="status" value="false">
+            I am NOT availible to be a mentor.
+          </label>
+        </div>
+      </div> 
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Check here to indicate that you have read and agree to the <a href="/about" target="_blank">terms & conditions</a>
+        </label>
+      </div>
+
+      <hr>
+
+      <button type="submit">Submit Info</button>
+
     </form>
   </section>
-
   <div class="col-md-3"></div>
 </section>

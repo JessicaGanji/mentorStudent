@@ -51,6 +51,7 @@ function getIndex(request, response) {
 
 // GET /mentors/:id
 function getProfile(request, response) {
+  console.log("GET PROFILE IS HIT")
   var id = request.params.id;
 
   User.findById({_id: id }, function (error, user_profile){
@@ -77,12 +78,13 @@ function getEdit(request, response) {
 
 // PUT /mentors/:id
 function putProfile(request, response) {
-  console.log('putProfile putProfile putProfile putProfile')
+  
   var id = request.params.id;
 
   User.findById({ _id: id }, function (error, user){
-    if(error) console.log( "There is an error on this page becuase:" + error );
-
+    console.log(request.body.first_name)
+    if(error) console.log( "TTTTTThere is an error on this page becuase:" + error );
+      console.log('Put Request Rec')
     if(request.body.first_name) user.first_name         = request.body.first_name;
     if(request.body.last_name) user.last_name           = request.body.last_name;
     if(request.body.headline) user.headline             = request.body.headline;
@@ -97,30 +99,28 @@ function putProfile(request, response) {
     if(request.body.experiences) user.experiences       = request.body.experiences;
     if(request.body.skills) user.skills                 = request.body.skills;
     if(request.body.availibility) user.availibility     = request.body.availibility;
-    if(request.body.time_zone) user.time_zone           = request.body.time_zone;
     if(request.body.status) user.status                 = request.body.status;
     if(request.body.terms) user.terms                   = request.body.terms;
 
     user.save( function (error){
-      if(error) console.log( "Could not save user becuase:" + error );
-      response.json({ message: "User has been updated!" });
-    });
-  });
-};
+      if(error) console.log( "Could not save user becuase:" + error );  
+      response.redirect('/mentors/' + id);
+    })
+    
+  })
+}
 
-// DELETE /mentors/:id
+// DELETE mentors/:id
 function deleteProfile(request, response) {
   var id = request.params.id;
 
   User.remove({_id: id}, function (error) {
     if(error) console.log( "User has not been deleted due to the following error:" + error );
-    //response.redirect('/mentors');
-    response.json({message: "user have been deleted"})
-  });
-  //response.redirect('/mentors');
-};
+    response.redirect('/mentors');
+  })
+}
 
-// GET /mentors/:id/message
+// GET mentors/:id/message
 function getMessage(request, response) {
   var id = request.params.id;
 

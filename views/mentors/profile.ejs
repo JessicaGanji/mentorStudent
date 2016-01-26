@@ -7,7 +7,7 @@
 				<h2>first_name last_name</h2>
 				<h5>headline</h5>
 				<h5>location</h5>
-		    <h5>area_of_focus</h5>
+		    	<h5>area_of_focus</h5>
 				<h5>company</h5>
 				<h5>personal_website</h5>
 				<h5>company_website</h5>
@@ -49,20 +49,10 @@
 		<section class="btn-primary">
 	    <a href="<%= user._id %>/edit"><h4>Edit</h4></a>
 		</section>
-		<section class="delBtn btn-primary" id="<%= user._id %>">Delete Profile</section>
+		<form method="post" action="/mentors/<%= user._id %>">
+			<input type="hidden" name="_method" value="delete" />
+			<button type="submit">Delete</button>
+		</form>
 		<% } %>
-		<script> 
-		$('.delBtn').click(callDelete)
-			function callDelete(){
-			    console.log(this.id)
-			    $.ajax({
-			        url: '/mentors/' + this.id,
-			        type: 'DELETE',
-			        success: function(result) {
-			            console.log("DELETED")
-			            window.location = "/mentors"
-			        }
-			    })
-			};
-		</script>
+		
 </section>
