@@ -21,6 +21,7 @@ var User = mongoose.Schema({
 	experiences: String,
 	skills: String,
 	availibility: String,
+	time_zone: String,
 	status: Boolean,
 	terms: Boolean
 });

@@ -46,12 +46,8 @@
 		</section>
 
 		<% if (user) { %>
-		<section class="btn-primary">
-	    <a href="mentors/<%= user._id %>/edit"><h4>Edit</h4></a>
-		</section>
-		<section class="btn-primary">
-	    <a href="mentors/<%= user._id %>"><h4>Delete</h4></a>
-		</section>
+		<a href="mentors/<%= user._id %>/edit"><section class="btn-primary"><h4>Edit</h4></section></a>
+		<a href="mentors/<%= user._id %>"><section class="btn-primary"><h4>Delete</h4></section></a>
 		<% } %>
 
 

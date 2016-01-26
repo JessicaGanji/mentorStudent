@@ -34,17 +34,13 @@
 
   <div class="col-md-8">
 		<section class="namecard">
-				<%= users.email %>
-				<%= users %>
-		</section>
-
-		<section class="namecard">
 			<div class="avatar"><img src="./../images/placeholder.png"></div>
 			<div class="info">
-				<h2>first_name last_name</h2>
-				<h5>headline</h5>
-				<h5>location</h5>
-		    <h5>area_of_focus</h5>
+				<h2><%= users.first_name %> <%= users.last_name %></h2>
+				<h5><%= users.headline %></h5>
+				<h5><%= users.location %></h5>
+		    	<h5><%= users.focus %></h5>
+		    	<p><%= users %></p>
 			</div>
 			<div style="clear:both;"></div>	
 		</section>

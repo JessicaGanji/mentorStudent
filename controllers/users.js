@@ -78,7 +78,7 @@ function patchProfile(request, response) {
   var id = request.params.id;
 
   User.findById({ _id: id }, function (error, user){
-    if(error) console.log( "TTTTTThere is an error on this page becuase:" + error );
+    if(error) console.log( "There is an error on this page becuase:" + error );
 
     if(request.body.first_name) user.first_name         = request.body.first_name;
     if(request.body.last_name) user.last_name           = request.body.last_name;
@@ -94,6 +94,7 @@ function patchProfile(request, response) {
     if(request.body.experiences) user.experiences       = request.body.experiences;
     if(request.body.skills) user.skills                 = request.body.skills;
     if(request.body.availibility) user.availibility     = request.body.availibility;
+    if(request.body.time_zone) user.time_zone           = request.body.time_zone;
     if(request.body.status) user.status                 = request.body.status;
     if(request.body.terms) user.terms                   = request.body.terms;
 
