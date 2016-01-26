@@ -17,7 +17,7 @@ router.route('/resources/:id/edit')
 
 router.route('/resources/:id')
 	.get(userController.getResource)
-	.patch(userController.patchResource)
+	.put(userController.putResource)
 	.delete(userController.deleteResource)
 
 module.exports = router

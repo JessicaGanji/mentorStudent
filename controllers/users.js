@@ -66,6 +66,8 @@ function getProfile(request, response) {
 
 // GET /mentors/:id/edit
 function getEdit(request, response) {
+  console.log('getEdit getEdit getEdit getEdit')
+
   var id = request.params.id;
 
   User.findById({_id: id}, function (error, user){
@@ -74,9 +76,15 @@ function getEdit(request, response) {
   })
 }
 
+<<<<<<< HEAD
 // PATCH mentors/:id
 function putProfile(request, response) {
   console.log('puuuuuuuuuuuutt')
+=======
+// PUT /mentors/:id
+function putProfile(request, response) {
+  console.log('putProfile putProfile putProfile putProfile')
+>>>>>>> 8a470a6b0eccd32040ecc3a7b14cf534baf6e789
   var id = request.params.id;
 
   User.findById({ _id: id }, function (error, user){
