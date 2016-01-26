@@ -7,11 +7,12 @@ var userController = require('../../controllers/users.js');
 
 router.route('/mentors')
 	.get(userController.getIndex)
+	
 
 router.route('/signup')
 	.get(userController.getSignup)
 	.post(userController.postSignup)
-
+	
 router.route('/login')
 	.get(userController.getLogin)
 	.post(userController.postLogin)
