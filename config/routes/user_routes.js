@@ -7,7 +7,6 @@ var userController = require('../../controllers/users.js');
 
 router.route('/mentors')
 	.get(userController.getIndex)
-	
 
 router.route('/signup')
 	.get(userController.getSignup)
@@ -20,15 +19,15 @@ router.route('/login')
 router.route('/logout')
 	.get(userController.getLogout)
 
-router.route('/mentors/:id')
-	.get(userController.getProfile)
-	.patch(userController.patchProfile)
-	.delete(userController.deleteProfile)
-
 router.route('/mentors/:id/edit')
 	.get(userController.getEdit)
 
 router.route('/mentors/:id/message')
 	.get(userController.getMessage)
+
+router.route('/mentors/:id')
+	.get(userController.getProfile)
+	.delete(userController.deleteProfile)
+	.patch(userController.patchProfile)
 
 module.exports = router

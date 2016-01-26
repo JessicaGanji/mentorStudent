@@ -77,10 +77,8 @@ function getEdit(request, response) {
 function patchProfile(request, response) {
   var id = request.params.id;
 
-  // User.findByIdAndUpdate
-
   User.findById({ _id: id }, function (error, user){
-    if(error) console.log( "There is an error on this page becuase:" + error );
+    if(error) console.log( "TTTTTThere is an error on this page becuase:" + error );
 
     if(request.body.first_name) user.first_name         = request.body.first_name;
     if(request.body.last_name) user.last_name           = request.body.last_name;
