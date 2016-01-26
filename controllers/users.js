@@ -78,13 +78,13 @@ function getEdit(request, response) {
 
 // PUT /mentors/:id
 function putProfile(request, response) {
-  console.log('putProfile putProfile putProfile putProfile')
+  
   var id = request.params.id;
 
   User.findById({ _id: id }, function (error, user){
     console.log(request.body.first_name)
     if(error) console.log( "TTTTTThere is an error on this page becuase:" + error );
-
+      console.log('Put Request Rec')
     if(request.body.first_name) user.first_name         = request.body.first_name;
     if(request.body.last_name) user.last_name           = request.body.last_name;
     if(request.body.headline) user.headline             = request.body.headline;
@@ -103,11 +103,10 @@ function putProfile(request, response) {
     if(request.body.terms) user.terms                   = request.body.terms;
 
     user.save( function (error){
-      if(error) console.log( "Could not save user becuase:" + error );
-      response.json({ message: "User has been updated!" });
-      console.log("THIiiiiiiiiiiiiiiiiS")
-      //response.redirect('/mentors');
+      if(error) console.log( "Could not save user becuase:" + error );  
+      response.redirect('/mentors/' + id);
     })
+    
   })
 }
 
@@ -117,10 +116,8 @@ function deleteProfile(request, response) {
 
   User.remove({_id: id}, function (error) {
     if(error) console.log( "User has not been deleted due to the following error:" + error );
-    //response.redirect('/mentors');
-    response.json({message: "user have been deleted"})
+    response.redirect('/mentors');
   })
-  //response.redirect('/mentors');
 }
 
 // GET mentors/:id/message

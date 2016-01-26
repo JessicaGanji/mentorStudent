@@ -11,6 +11,7 @@ var path		   			= require('path');
 var session 				= require('express-session');
 var port 		   			= process.env.PORT || 3000;
 var mongoUri 				= process.env.MONGOLAB_URI || 'mongodb://localhost/project_three';
+var methodOverride  = require('method-override');
 
 var staticRouter  	= require('./config/routes/static_routes.js');
 var userRouter			= require('./config/routes/user_routes.js');
@@ -22,6 +23,15 @@ var userSetUp				= userPassport(passport);
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
+app.use(methodOverride('_method'));
+app.use(methodOverride(function(req, res){
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
+}));
 
 app.use(ejsLayouts)
 app.set('views', path.join(__dirname, 'views'))
