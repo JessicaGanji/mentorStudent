@@ -1,10 +1,10 @@
-var User      = require('../models/user.js')
-var passport  = require('passport')
+var User      = require('../models/user.js');
+var passport  = require('passport');
 
 // GET /signup
 function getSignup(request, response) {
   response.render('mentors/signup.ejs', { message: request.flash('signupMessage') });
-}
+};
 
 // POST /signup
 function postSignup(request, response) {
@@ -17,12 +17,12 @@ function postSignup(request, response) {
   });
 
   return signUpStrategy(request, response) 
-}
+};
 
 // GET /login
 function getLogin(request, response) { 
   response.render('mentors/login.ejs', { message: request.flash('loginMessage') }); 
-}
+};
 
 // POST /login 
 function postLogin(request, response) {
@@ -33,21 +33,21 @@ function postLogin(request, response) {
   });
 
   return loginProperty(request, response);
-}
+};
 
 // GET /mentors/logout
 function getLogout(request, response) {
   request.logout();
   response.redirect('/');
-}
+};
 
 // GET /mentors
 function getIndex(request, response) {
   User.find({}, function (error, users) {
     if(error) console.log(error);
     response.render('mentors/index.ejs', {users: users})
-  })
-}
+  });
+};
 
 // GET /mentors/:id
 function getProfile(request, response) {
@@ -59,9 +59,9 @@ function getProfile(request, response) {
       response.redirect('/');
     } else {
       response.render('mentors/profile.ejs', {user_profile: user_profile});
-    }
-  })
-}
+    };
+  });
+};
 
 // GET /mentors/:id/edit
 function getEdit(request, response) {
@@ -71,9 +71,9 @@ function getEdit(request, response) {
 
   User.findById({_id: id}, function (error, user){
     if(error) console.log( "There is an error on this page because:" + error );
-    response.render('mentors/edit.ejs', {user: user})
-  })
-}
+    response.render('mentors/edit.ejs', {user: user});
+  });
+};
 
 // PUT /mentors/:id
 function putProfile(request, response) {
@@ -104,9 +104,9 @@ function putProfile(request, response) {
     user.save( function (error){
       if(error) console.log( "Could not save user becuase:" + error );
       response.json({ message: "User has been updated!" });
-    })
-  })
-}
+    });
+  });
+};
 
 // DELETE /mentors/:id
 function deleteProfile(request, response) {
@@ -116,9 +116,9 @@ function deleteProfile(request, response) {
     if(error) console.log( "User has not been deleted due to the following error:" + error );
     //response.redirect('/mentors');
     response.json({message: "user have been deleted"})
-  })
+  });
   //response.redirect('/mentors');
-}
+};
 
 // GET /mentors/:id/message
 function getMessage(request, response) {
@@ -127,8 +127,8 @@ function getMessage(request, response) {
   User.findById({_id: id}, function (error, user){
     if(error) console.log( "There is an error on this page because:" + error );
     response.render('mentors/message.ejs', {user: user})
-  })
-}
+  });
+};
 
 module.exports = {
   getLogin: getLogin,
@@ -142,4 +142,4 @@ module.exports = {
   putProfile: putProfile,
   deleteProfile: deleteProfile,
   getMessage: getMessage
-}
+};

@@ -12,12 +12,12 @@ router.route('/resources/:id/new')
 	.get(userController.getNew)
 	.post(userController.postResource)
 
-router.route('/resources/:id/edit')
-	.get(userController.getEdit)
-
 router.route('/resources/:id')
 	.get(userController.getResource)
-	.put(userController.putResource)
 	.delete(userController.deleteResource)
+
+router.route('/resources/:id/edit')
+	.get(userController.getEdit)
+	.put(userController.putResource)
 
 module.exports = router

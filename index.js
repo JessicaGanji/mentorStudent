@@ -44,6 +44,8 @@ app.use(function (req, res, next) {
 
 app.use('/', staticRouter)
 app.use('/', userRouter)
+// app.use('/', resourceRouter)
+// app.use('/', apiRouter)
 
 app.listen(port)
 console.log('The server is running on port' + port)

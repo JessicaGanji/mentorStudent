@@ -11,9 +11,6 @@ router.route('/')
 router.route('/about')
 	.get(staticsController.getAbout)
 
-router.route('/resources')
-	.get(staticsController.getResources)
-
 router.route('/quiz')
 	.get(staticsController.getQuiz)
 

@@ -1,18 +1,8 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
+var Resource = require('./resource.js');
 
-
-var resourceSchema = mongoose.Schema({	
-	photo: String,
-	name: String,
-	spin: String,
-	description: String,
-	link: String,
-	pros: String,
-	cons: String 
-});
-
-var userSchema = mongoose.Schema({
+var User = mongoose.Schema({
 	local: {
 		email        : String,
 		password     : String,
@@ -35,7 +25,7 @@ var userSchema = mongoose.Schema({
 	time_zone: String,
 	status: Boolean,
 	terms: Boolean 
-	resources: [Resource]
+	// resources: [Resource]
 });
 
 User.methods.encrypt = function(password) {
@@ -46,15 +36,4 @@ User.methods.validPassword = function(password) {
 	return bcrypt.compareSync(password, this.local.password);
 };
 
-var User = mongoose.model('User', userSchema )
-var Resource = mongoose.model('Resource', resourceSchema )
-
-module.exports = {
-	User: User,
-	Resource: Resource
-}
-
-
-
-
-
+module.exports = mongoose.model('User', User);
