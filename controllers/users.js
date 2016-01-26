@@ -53,14 +53,18 @@ function getIndex(request, response) {
 function getProfile(request, response) {
   var id = request.params.id;
 
-  User.findById({_id: id}, function (error, user){
-    if(error) console.log( "There is an error on this page because:" + error );
+  User.find({_id: id}, function (error, user){
+    //if(error) console.log( "There is an error on this page because:" + error );
     if(error) {
+      console.log("didnt find user")
       response.redirect('/');
-    } else{
-      response.redirect('/mentors/:id');
-      response.render('/mentors/profile.ejs', {user: user});
-    }
+    } 
+    response.render('mentors/profile.ejs', {user: user})
+
+    // else {
+    //   response.redirect('/mentors/:id');
+    //   response.render('/mentors/profile.ejs', {user: user});
+    // }
   })
 }
 
