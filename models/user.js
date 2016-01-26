@@ -23,8 +23,8 @@ var User = mongoose.Schema({
 	availibility: String,
 	time_zone: String,
 	status: Boolean,
-	terms: Boolean, 
-	resources: [Resource]
+	terms: Boolean 
+	// resources: [Resource]
 });
 
 User.methods.encrypt = function(password) {
