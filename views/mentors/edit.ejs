@@ -14,32 +14,32 @@
         <label for="last_name">Last Name</label>
         <input class="form-control" type="text" name="last_name" id="last_name">
       </div>
-
-      <div class="form-group">
-        <label for="headline">Headline</label>
-        <input class="form-control" type="text" name="headline" id="headline">
-      </div>
       
       <div class="form-group">
-        <label for="photo">File input</label>
+        <label for="photo">Profile Photo</label>
         <input type="file" id="photo">
         <p class="help-block">Example block-level help text here.</p>
       </div>
 
       <div class="form-group">
-        <label for="intro">Introduction</label>
-        <input class="form-control" type="text_area" name="intro" id="intro">
-        <textarea class="form-control" rows="3"></textarea>
+        <label for="headline">Headline</label>
+        <input class="form-control" type="text" name="headline" id="headline">
       </div>
 
       <div class="form-group">
-        <label for="location">Location</label>
-        <input class="form-control" type="text" name="location" id="location">
+        <label for="intro">Introduction</label>
+        <input class="form-control" type="text" name="intro" id="intro">
       </div>
 
       <div class="form-group">
         <label for="focus">Focus</label>
-        <input class="form-control" type="text" name="focus" id="focus">
+        <select class="form-control" name="focus" id="focus">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
       </div>
 
       <div class="form-group">
@@ -48,9 +48,14 @@
       </div> 
 
       <div class="form-group">
-        <label for="company_link">Company Link</label>
+        <label for="company_link">Company Website</label>
         <input class="form-control" type="url" name="company_link" id="company_link">
       </div> 
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input class="form-control" type="text" placeholder="zip code" name="location" id="location">
+      </div>
 
       <div class="form-group">
         <label for="education">Education</label>
@@ -58,7 +63,7 @@
       </div> 
 
       <div class="form-group">
-        <label for="personal_link">Personal Link</label>
+        <label for="personal_link">Personal Website</label>
         <input class="form-control" type="url" name="personal_link" id="personal_link">
       </div> 
 
@@ -69,7 +74,12 @@
 
       <div class="form-group">
         <label for="skills">Skills</label>
-        <input class="form-control" type="text" name="skills" id="skills">
+        <div class="checkbox">
+          <label><input type="checkbox" value="Javascript" name="skills" id="skills">Javascript</label>
+          <label><input type="checkbox" value="Ruby" name="skills" id="skills">Ruby</label>
+          <label><input type="checkbox" value="Python" name="skills" id="skills">Python</label>
+          <label><input type="checkbox" value="HTML/CSS" name="skills" id="skills">HTML/CSS</label>
+        </div>
       </div> 
 
       <div class="form-group">
@@ -84,56 +94,27 @@
 
       <div class="form-group">
         <label for="status">Status</label>
-        <input class="form-control" type="text" name="status" id="status">
+        <div class="radio">
+          <label>
+            <input type="radio" name="status" id="status" value="true" checked>
+            I am availible to be a mentor.
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="status" id="status" value="false">
+            I am NOT availible to be a mentor.
+          </label>
+        </div>
       </div> 
 
       <div class="checkbox">
         <label>
-          <input type="checkbox"> Check me out
+          <input type="checkbox"> Check here to indicate that you have read and agree to the <a href="/about" target="_blank">terms & conditions</a>
         </label>
       </div>
 
       <hr>
-
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value="">
-          Option one is this and that&mdash;be sure to include why it's great
-        </label>
-      </div>
-      <div class="checkbox disabled">
-        <label>
-          <input type="checkbox" value="" disabled>
-          Option two is disabled
-        </label>
-      </div>
-
-      <div class="radio">
-        <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-          Option one is this and that&mdash;be sure to include why it's great
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-          Option two can be something else and selecting it will deselect option one
-        </label>
-      </div>
-      <div class="radio disabled">
-        <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-          Option three is disabled
-        </label>
-      </div>
-
-      <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
 
       <input class="btn btn-default" type="submit">
     </form>
