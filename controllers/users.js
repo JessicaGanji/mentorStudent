@@ -113,9 +113,10 @@ function deleteProfile(request, response) {
 
   User.remove({_id: id}, function (error) {
     if(error) console.log( "User has not been deleted due to the following error:" + error );
-    console.log( "User has been successfully deleted." )
-    response.redirect('/');
+    //response.redirect('/mentors');
+    response.json({message: "user have been deleted"})
   })
+  //response.redirect('/mentors');
 }
 
 // GET /mentors/:id/message
