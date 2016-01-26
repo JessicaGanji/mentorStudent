@@ -53,12 +53,12 @@ function getIndex(request, response) {
 function getProfile(request, response) {
   var id = request.params.id;
 
-  User.findById({_id: id }, function (error, user){
+  User.findById({_id: id }, function (error, user_profile){
     if(error) {
       console.log( "There is an error on this page because:" + error );
       response.redirect('/');
     } else {
-      response.render('mentors/profile.ejs', {user: user});
+      response.render('mentors/profile.ejs', {user_profile: user_profile});
     }
   })
 }
@@ -101,7 +101,7 @@ function patchProfile(request, response) {
     user.save( function (error){
       if(error) console.log( "Could not save user becuase:" + error );
       response.json({ message: "User has been updated!" });
-      response.redirect('mentors/profile.ejs');
+      response.render('mentors/profile.ejs');
     })
   })
 }
