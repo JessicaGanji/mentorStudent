@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-var Resource = require('./resource.js');
+var ResourceSchema = require('./resource.js').schema;
 
 var User = mongoose.Schema({
 	local: {
@@ -23,7 +23,7 @@ var User = mongoose.Schema({
 	availibility: String,
 	time_zone: String,
 	status: Boolean,
-	resources: [Resource]
+	resources: [ResourceSchema]
 });
 
 User.methods.encrypt = function(password) {
