@@ -3,21 +3,21 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var passport = require('passport');
-var resourceController = require('../../controllers/resources.js');
+var resourcesController = require('../../controllers/resources.js');
 
 router.route('/resources')
-	.get(resourceController.getIndex)
+	.get(resourcesController.getIndex)
 
 router.route('/resources/:id/new')
-	.get(resourceController.getNew)
-	.post(resourceController.postResource)
+	.get(resourcesController.getNew)
+	.post(resourcesController.postResource)
 
 router.route('/resources/:id')
-	.get(resourceController.getResource)
-	.delete(resourceController.deleteResource)
+	.get(resourcesController.getResource)
+	.delete(resourcesController.deleteResource)
 
 router.route('/resources/:id/edit')
-	.get(resourceController.getEdit)
-	.put(resourceController.putResource)
+	.get(resourcesController.getEdit)
+	.put(resourcesController.putResource)
 
 module.exports = router

@@ -3,32 +3,32 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var passport = require('passport');
-var userController = require('../../controllers/users.js');
+var usersController = require('../../controllers/users.js');
 
 router.route('/mentors')
-	.get(userController.getIndex)
+	.get(usersController.getIndex)
 
 router.route('/signup')
-	.get(userController.getSignup)
-	.post(userController.postSignup)
+	.get(usersController.getSignup)
+	.post(usersController.postSignup)
 	
 router.route('/login')
-	.get(userController.getLogin)
-	.post(userController.postLogin)
+	.get(usersController.getLogin)
+	.post(usersController.postLogin)
 
 router.route('/logout')
-	.get(userController.getLogout)
+	.get(usersController.getLogout)
 
 router.route('/mentors/:id/edit')
-	.get(userController.getEdit)
+	.get(usersController.getEdit)
 
 router.route('/mentors/:id/message')
-	.get(userController.getMessage)
+	.get(usersController.getMessage)
 
 router.route('/mentors/:id')
-	.get(userController.getProfile)
-	.put(userController.putProfile)
-	.delete(userController.deleteProfile)
+	.get(usersController.getProfile)
+	.put(usersController.putProfile)
+	.delete(usersController.deleteProfile)
 
 
 
