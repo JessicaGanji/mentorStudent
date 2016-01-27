@@ -1,51 +1,84 @@
 <section class="row background">
 	<div class="col-md-8">
 		<section class="namecard">
-			<div class="avatar"><img src="./../images/placeholder.png"></div>
-
-			<div class="info">
-				<h2>first_name last_name</h2>
-				<h5>headline</h5>
-				<h5>location</h5>
-		    	<h5>area_of_focus</h5>
-				<h5>company</h5>
-				<h5>personal_website</h5>
-				<h5>company_website</h5>
-				<%= user_profile.first_name %>
-				<%= user_profile.local.email %>
+			<div class="avatar">
+				<% if (user_profile.photo) { %>
+					<img src="<%= user_profile.photo %>">
+				<% } else { %>
+					<img src="./../images/placeholder.png">
+				<% } %>
 			</div>
-
+			<div class="info">
+				<h5><%= user_profile.first_name %> <%= user_profile.last_name %></h5>
+				<h5><%= user_profile.headline %></h5>
+				<h5><%= user_profile.location %></h5>
+			</div>
 			<div style="clear:both;"></div>	
 		</section>
 
     <section class="part">
 	    <h3>Introduction</h3>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	    <p><%= user_profile.intro %></p>
+	    <h5>Focus: <%= user_profile.focus %></h5>
+			<h5>personal_link: <a href="<%= user_profile.personal_link %>" ><%= user_profile.personal_link %></a></h5>
 		</section>
 
     <section class="part">
 	    <h3>Skills</h3>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	    <p><%= user_profile.skills %></p>
 		</section>
 
     <section class="part">
-	    <h3>Experiences</h3>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	    <h3>Work Experience</h3>
+	    <p><%= user_profile.experience %></p>
+			<h5>Current Company: <a href="<%= user_profile.company_link %>" ><%= user_profile.company %></a></h5>
 		</section>
 
+    <section class="part">
+	    <h3>Education</h3>
+	    <p><%= user_profile.education %></p>
+		</section>
+
+<!--     <section class="part">
+	    <p><%= user_profile.experiences %></p>
+    	<h5>Name: <%= user_profile.first_name %></h5>
+			<h5>Name: <%= user_profile.last_name %></h5>
+			<h5>Headline: <%= user_profile.headline %></h5>
+			<h5>Photo: <%= user_profile.photo %></h5>
+			<h5>Location: <%= user_profile.location %></h5>
+			<h5>Focus: <%= user_profile.focus %></h5>
+			<h5>Intro: <%= user_profile.intro %></h5>
+			<h5>Company: <%= user_profile.company %></h5>
+			<h5>company_link: <%= user_profile.company_link %></h5>
+			<h5>education: <%= user_profile.education %></h5>
+			<h5>personal_link: <%= user_profile.personal_link %></h5>
+			<h5>experiences: <%= user_profile.experiences %></h5>
+			<h5>skills: <%= user_profile.skills %></h5>
+			<h5>Availibility: <%= user_profile.availibility %></h5>
+			<h5>Time Zone: <%= user_profile.time_zone %></h5>
+			<h5>Status: <%= user_profile.status %></h5>
+		</section> -->
   </div>
 
   <div class="col-md-4">
-    <section class="btn-primary">
-	    <h4>Send first_name an email using our request form!</h4>
-		</section>
 
-    <section class="part">
-	    <h4>Availibility</h4>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</section>
 
-		<% if (user) { %>
+    <% if (user.status == true ) { %>
+	    <section class="btn-primary">
+		    <h4>Send <%= user_profile.first_name %> an email using our request form!</h4>
+			</section>
+	    <section class="part">
+	    	<h3>Availibility</h3>
+		    <h5><%= user_profile.availibility %></h5>
+				<h5>Time Zone: <%= user_profile.time_zone %></h5>
+			</section>
+		<% } else { %>
+	    <section class="btn-primary">
+		    <h4>Sorry, <%= user_profile.first_name %> is not currently able to be a mentor.</h4>
+			</section>
+		<% } %>
+
+		<% if (user.id == user_profile.id) { %>
 		<section class="btn-primary">
 	    <a href="<%= user._id %>/edit"><h4>Edit</h4></a>
 		</section>

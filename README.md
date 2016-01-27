@@ -26,16 +26,16 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 
 #### User Stories
 
-| As a .. | I can.. |
-|---------|---------|
-| Visitor | learn about the site ( '/about' ) |
-| Visitor | take a quiz ( '/quiz' ) |
-| Visitor | browse mentors ( '/mentors' ) |
-| Visitor | filter mentors ( '/mentors' ) |
-| Visitor | sort mentors ( '/mentors' ) |
-| Visitor | search mentors ( '/mentors' ) |
-| Visitor | contact mentor through an email request form |
-| Visitor | access resources ( '/resources' ) |
+| As a .. | I can.. | route |
+|---------|---------|---------|
+| Visitor | learn about the site | ( '/about' ) |
+| Visitor | take a quiz | ( '/quiz' ) |
+| Visitor | browse mentors | ( '/mentors' ) |
+| Visitor | filter mentors | ( '/mentors' ) |
+| Visitor | sort mentors | ( '/mentors' ) |
+| Visitor | search mentors | ( '/mentors' ) |
+| Visitor | contact a mentor through their particular email request form |
+| Visitor | access resources | ( '/resources' ) |
 | Mentor | create/edit/delete my public profile |
 | Mentor | create/edit/delete my resources |
 | Mentor | create/edit/delete other mentor's resources |

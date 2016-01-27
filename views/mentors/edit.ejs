@@ -6,14 +6,15 @@
 
     <form method="post" action="/mentors/<%= user._id %>">
       <input type="hidden" name="_method" value="put">
+
       <div class="form-group">
         <label for="first_name">Frist Name</label>
-        <input class="form-control" type="text" name="first_name" id="first_name">
+        <input class="form-control" type="text" value="<%= user.first_name %>" name="first_name" id="first_name">
       </div>
 
       <div class="form-group">
         <label for="last_name">Last Name</label>
-        <input class="form-control" type="text" name="last_name" id="last_name">
+        <input class="form-control" type="text" value="<%= user.last_name %>" name="last_name" id="last_name">
       </div>
       
       <div class="form-group">
@@ -24,17 +25,17 @@
 
       <div class="form-group">
         <label for="headline">Headline</label>
-        <input class="form-control" type="text" name="headline" id="headline">
+        <input class="form-control" type="text" value="<%= user.headline %>" name="headline" id="headline">
       </div>
 
       <div class="form-group">
         <label for="intro">Introduction</label>
-        <input class="form-control" type="text" name="intro" id="intro">
+        <input class="form-control" type="text" value="<%= user.intro %>" name="intro" id="intro">
       </div>
 
       <div class="form-group">
         <label for="focus">Focus</label>
-        <select class="form-control" name="focus" id="focus">
+        <select class="form-control" value="<%= user.focus %>" id="focus">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -45,32 +46,32 @@
 
       <div class="form-group">
         <label for="company">Company</label>
-        <input class="form-control" type="text" name="company" id="company">
+        <input class="form-control" type="text" value="<%= user.company %>" name="company" id="company">
       </div> 
 
       <div class="form-group">
         <label for="company_link">Company Website</label>
-        <input class="form-control" type="url" name="company_link" id="company_link">
+        <input class="form-control" type="url" value="<%= user.company_link %>" name="company_link" id="company_link">
       </div> 
 
       <div class="form-group">
         <label for="location">Location</label>
-        <input class="form-control" type="text" placeholder="zip code" name="location" id="location">
+        <input class="form-control" type="text" value="<%= user.location %>" name="location" id="location">
       </div>
 
       <div class="form-group">
         <label for="education">Education</label>
-        <input class="form-control" type="text" name="education" id="education">
+        <input class="form-control" type="text" value="<%= user.education %>" name="education" id="education">
       </div> 
 
       <div class="form-group">
         <label for="personal_link">Personal Website</label>
-        <input class="form-control" type="url" name="personal_link" id="personal_link">
+        <input class="form-control" type="url" value="<%= user.personal_link %>" name="personal_link" id="personal_link">
       </div> 
 
       <div class="form-group">
-        <label for="experiences">Experiences</label>
-        <input class="form-control" type="text_area" name="experiences" id="experiences">
+        <label for="experience">Experience</label>
+        <input class="form-control" type="text" value="<%= user.experience %>" name="experience" id="experience">
       </div> 
 
       <div class="form-group">
@@ -85,12 +86,12 @@
 
       <div class="form-group">
         <label for="availibility">Availibility</label>
-        <input class="form-control" type="text" name="availibility" id="availibility">
+        <input class="form-control" type="text" value="<%= user.availibility %>" name="availibility" id="availibility">
       </div> 
 
       <div class="form-group">
         <label for="time_zone">Time Zone</label>
-        <select class="form-control" name="time_zone" id="time_zone">
+        <select class="form-control" value="<%= user.time_zone %>" name="time_zone" id="time_zone">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -114,14 +115,6 @@
           </label>
         </div>
       </div> 
-
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Check here to indicate that you have read and agree to the <a href="/about" target="_blank">terms & conditions</a>
-        </label>
-      </div>
-
-      <hr>
 
       <button type="submit">Submit Info</button>
 

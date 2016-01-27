@@ -7,7 +7,6 @@ var User = mongoose.Schema({
 		email: String,
 		password: String,
 	},
-	password_confirmation: String,
 	first_name: String,
 	last_name: String,
 	headline: String,
@@ -19,12 +18,11 @@ var User = mongoose.Schema({
 	company_link: String,
 	education: String,
 	personal_link: String,
-	experiences: String,
+	experience: String,
 	skills: String,
 	availibility: String,
 	time_zone: String,
 	status: Boolean,
-	terms: Boolean,
 	resources: [Resource]
 });
 

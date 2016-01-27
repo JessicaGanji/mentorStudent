@@ -2,7 +2,6 @@
   <div class="col-md-4">
 			<h1>Mentors</h1>
   </div>
-
   <section class="col-md-8">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search for...">
@@ -12,7 +11,6 @@
     </div>
   </section>
 </section>
-
 
 <section class="row background">
   <div class="col-md-4">
@@ -36,11 +34,21 @@
 	
 		<% users.forEach(function(mentor){ %>
 			<section class="namecard">
-				<div class="avatar"><img src="./../images/placeholder.png"></div>
+				<div class="avatar"><a href="mentors/<%= mentor._id %>">
+					<% if (mentor.photo) { %>
+						<img src="<%= mentor.photo %>">
+					<% } else { %>
+						<img src="./../images/placeholder.png">
+					<% } %>
+				</a></div>
+				
 				<div class="info">
-					<h5><%= mentor.first_name %> <%= mentor.last_name %></h5>
+					<h5><a href="mentors/<%= mentor._id %>"><%= mentor.first_name %> <%= mentor.last_name %></a></h5>
+					<h5><%= mentor.headline %></h5>
 					<h5><%= mentor._id %></h5>
-					<h5><%= mentor.focus %></h5>			
+					<h5><%= mentor.focus %></h5>
+					<h5><%= mentor.skills %></h5>	
+					<h5><%= mentor.location %></h5>			
 				</div>
 				<div style="clear:both;"></div>	
 			</section>

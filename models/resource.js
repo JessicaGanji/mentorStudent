@@ -4,7 +4,7 @@ var bcrypt   = require('bcrypt-nodejs');
 var Resource = mongoose.Schema({	
 	photo: String,
 	name: String,
-	spin: String,
+	format: String,
 	description: String,
 	link: String,
 	pros: String,
