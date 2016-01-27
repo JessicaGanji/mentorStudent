@@ -31,11 +31,29 @@
           <p><%= resource.cons %></p>
           <p><a class="btn btn-primary btn-sm" href="<%= resource.link %>" role="button">Visit Site</a></p> 
           <% if (user) { %>
-            <p><a class="btn btn-primary btn-sm" href="<%= resource.link %>" role="button">Edit</a></p>
+           <!--  <div class="btn btn-danger glyphicon glyphicon-trash" id="<%= resource.id %>"></div> -->
+           <button class="delBtn" id="<%= resource.id %>">delete</button>
           <% } %>    
         </section>
       </div>
     <% }) %>
 
+    <script type="text/javascript">
+      $('.delBtn').click(callDelete)
+      function callDelete(){
+        console.log(this.id)
+        $.ajax({
+            url: '/resources/' + this.id,
+            type: 'DELETE',
+            success: function(result) {
+                //console.log(result)
+                //hack for forcing page reload
+                //location.reload()
+            }
+        })
+    };
+​
+​
+</script>
 
 </section>
