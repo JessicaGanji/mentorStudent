@@ -33,10 +33,8 @@ function deleteAPI(request, response) {
 
 module.exports = {
   getIndex: getIndex,
-  getNew: getNew,
   postAPI: postAPI,
   getAPI: getAPI,
-  getEdit: getEdit,
   putAPI: putAPI,
   deleteAPI: deleteAPI
 };

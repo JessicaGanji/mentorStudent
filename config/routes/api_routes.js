@@ -3,21 +3,19 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var passport = require('passport');
-var apiController = require('../../controllers/api.js');
+var apisController = require('../../controllers/apis.js');
 
 router.route('/api')
-	.get(apiController.getIndex)
+	.get(apisController.getIndex)
 
 router.route('/api/new')
-	.get(apiController.getNew)
-	.post(apiController.postAPI)
+	.post(apisController.postAPI)
 
 router.route('/api/:id')
-	.get(apiController.getAPI)
-	.delete(apiController.deleteAPI)
+	.get(apisController.getAPI)
+	.delete(apisController.deleteAPI)
 
 router.route('/api/:id/edit')
-	.get(apiController.getEdit)
-	.put(apiController.putAPI)
+	.put(apisController.putAPI)
 
 module.exports = router
