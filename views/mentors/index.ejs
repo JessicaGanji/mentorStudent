@@ -33,39 +33,18 @@
   </div>
 
   <div class="col-md-8">
-		<section class="namecard">
-			<div class="avatar"><img src="./../images/placeholder.png"></div>
-			<div class="info">
-				<h2><%= users.first_name %> <%= users.last_name %></h2>
-				<h5><%= users.headline %></h5>
-				<h5><%= users.location %></h5>
-		    	<h5><%= users.focus %></h5>
-		    	<p><%= users %></p>
-			</div>
-			<div style="clear:both;"></div>	
-		</section>
-
-		<section class="namecard">
-			<div class="avatar"><img src="./../images/placeholder.png"></div>
-			<div class="info">
-				<h2>first_name last_name</h2>
-				<h5>headline</h5>
-				<h5>location</h5>
-		    <h5>area_of_focus</h5>
-			</div>
-			<div style="clear:both;"></div>	
-		</section>
-
-		<section class="namecard">
-			<div class="avatar"><img src="./../images/placeholder.png"></div>
-			<div class="info">
-				<h2>first_name last_name</h2>
-				<h5>headline</h5>
-				<h5>location</h5>
-		    <h5>area_of_focus</h5>
-			</div>
-			<div style="clear:both;"></div>	
-		</section>
+	
+		<% users.forEach(function(mentor){ %>
+			<section class="namecard">
+				<div class="avatar"><img src="./../images/placeholder.png"></div>
+				<div class="info">
+					<h5><%= mentor.first_name %> <%= mentor.last_name %></h5>
+					<h5><%= mentor._id %></h5>
+					<h5><%= mentor.focus %></h5>			
+				</div>
+				<div style="clear:both;"></div>	
+			</section>
+		<% }) %>
 
 		<nav>
 		  <ul class="pagination">
