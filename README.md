@@ -29,15 +29,16 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 | As a .. | I can.. |
 |---------|---------|
 | Visitor | learn about the site ( '/about' ) |
-| Visitor | access resources ( '/resources' ) |
-| Visitor | take a quiz that will help me find my potencial "area of focus" ( '/quiz' ) |
+| Visitor | take a quiz ( '/quiz' ) |
 | Visitor | browse mentors ( '/mentors' ) |
 | Visitor | filter mentors ( '/mentors' ) |
 | Visitor | sort mentors ( '/mentors' ) |
 | Visitor | search mentors ( '/mentors' ) |
 | Visitor | contact mentor through an email request form |
-| Mentor | create/edit/delete my mentor profile |
-| Mentor | create/edit/delete resources |
+| Visitor | access resources ( '/resources' ) |
+| Mentor | create/edit/delete my public profile |
+| Mentor | create/edit/delete my resources |
+| Mentor | create/edit/delete other mentor's resources |
 | Mentor | update my status from availible to unavailible |
 | Mentor | recieve emails from interested visitor |
 -
