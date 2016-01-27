@@ -3,7 +3,11 @@
 		<div class="part">
 			<h1>Resources</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <% if (user) { %>
+      <p><a class="btn btn-primary btn-md" href="/resources/new" role="button">Add a Resource</a></p>
+      <% } %>
       <p><%= resources %></p>
+
 		</div>
   </div>
 </section>

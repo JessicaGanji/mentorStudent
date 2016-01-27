@@ -13,24 +13,25 @@ function getIndex (request, response){
 function getNew (request, response){
   console.log(user._id)
   console.log(user)
-  response.render('resources/new.ejs', {resources: resources})
-  
+  response.render('resources/new.ejs')
 };
 
 // POST /resources/new
 function postResource (request, response){
   var resource = new Resource()
-  resource.photo       = req.body.photo
-  resource.name        = req.body.name
-  resource.spin        = req.body.spin
-  resource.description = req.body.description
-  resource.link        = req.body.link
-  resource.pros        = req.body.pros
-  resource.cons        = req.body.cons
+  resource.photo       = request.body.photo
+  resource.name        = request.body.name
+  resource.spin        = request.body.spin
+  resource.description = request.body.description
+  resource.link        = request.body.link
+  resource.pros        = request.body.pros
+  resource.cons        = request.body.cons
 
   resource.save(function (error) {
     if (error) console.log("Could not save resource because:" + error )
   })
+  console.log(user.resources)
+  console.log(resource)
   user.resources.push(resource)
   response.redirect('/resources')
 };
