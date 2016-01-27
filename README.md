@@ -28,24 +28,19 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 
 | As a .. | I can.. |
 |---------|---------|
-| Visitor | select to be a student or a mentor |
 | Visitor | learn about the site ( '/about' ) |
 | Visitor | access resources ( '/resources' ) |
-| Visitor | take a quiz to learn more about tech and find my "area of focus" ( '/quiz' ) |
-| Student | select an avatar based on your quiz result/area of focus |
-| Student | create/edit/delete my student profile |
-| Student | browse mentors |
-| Student | not browse students |
-| Student | filter mentors |
-| Student | contact a mentor |
-| Student | take a quiz that will help me find my "area of focus" |
-| Student | open the quiz in a module, while I am completing my sign up form, as opposed to dealing with a new browser window/tab | 
+| Visitor | take a quiz to learn more about my potencial "area of focus" ( '/quiz' ) |
+| Visitor | browse mentors ( '/mentors' ) |
+| Visitor | filter mentors ( '/mentors' ) |
+| Visitor | sort mentors ( '/mentors' ) |
+| Visitor | search mentors ( '/mentors' ) |
+| Visitor | contact mentor through an email request form |
+| Visitor | take a quiz that will help me find my "area of focus" | 
 | Mentor | create/edit/delete my mentor profile |
+| Mentor | create/edit/delete resources |
 | Mentor | update my status from availible to unavailible |
-| Mentor | recieve notifications/messages/emails from interested students |
-| Mentor | not browse students |
-| Mentor | login with LinkedIn |
-
+| Mentor | recieve emails from interested students |
 -
 
 #### ERD
