@@ -21,7 +21,7 @@ function postResource (request, response){
   var resource = new Resource()
   resource.photo       = request.body.photo
   resource.name        = request.body.name
-  resource.spin        = request.body.spin
+  resource.format      = request.body.format
   resource.description = request.body.description
   resource.link        = request.body.link
   resource.pros        = request.body.pros

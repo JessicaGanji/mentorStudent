@@ -205,6 +205,11 @@ section{
 	float:right;
 }
 
+/* Resource Index */
+
+.icon img {
+	width:100%;
+}
 
 
 /* Footer */
