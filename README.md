@@ -30,17 +30,16 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 |---------|---------|
 | Visitor | learn about the site ( '/about' ) |
 | Visitor | access resources ( '/resources' ) |
-| Visitor | take a quiz to learn more about my potencial "area of focus" ( '/quiz' ) |
+| Visitor | take a quiz that will help me find my potencial "area of focus" ( '/quiz' ) |
 | Visitor | browse mentors ( '/mentors' ) |
 | Visitor | filter mentors ( '/mentors' ) |
 | Visitor | sort mentors ( '/mentors' ) |
 | Visitor | search mentors ( '/mentors' ) |
 | Visitor | contact mentor through an email request form |
-| Visitor | take a quiz that will help me find my "area of focus" | 
 | Mentor | create/edit/delete my mentor profile |
 | Mentor | create/edit/delete resources |
 | Mentor | update my status from availible to unavailible |
-| Mentor | recieve emails from interested students |
+| Mentor | recieve emails from interested visitor |
 -
 
 #### ERD
