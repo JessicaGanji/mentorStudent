@@ -11,6 +11,7 @@ function getIndex (request, response){
 
 // GET /resources/new
 function getNew (request, response){
+  User.resource = new Resource
   response.render('resources/index.ejs');
 };
 
