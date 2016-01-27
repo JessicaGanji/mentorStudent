@@ -21,11 +21,6 @@ function getAPI(request, response) {
   response.json({message: "blank"});
 };
 
-// GET /api/:id/edit
-function getEdit(request, response) {
-  response.json({message: "blank"});
-};
-
 // PUT /api/:id/edit
 function putAPI(request, response) {
   response.json({message: "blank"});
