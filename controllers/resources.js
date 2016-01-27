@@ -11,12 +11,28 @@ function getIndex (request, response){
 
 // GET /resources/new
 function getNew (request, response){
-  response.render('resources/new.ejs');
+  console.log(user._id)
+  console.log(user)
+  response.render('resources/new.ejs', {resources: resources})
+  
 };
 
 // POST /resources/new
 function postResource (request, response){
-  response.render('resources/index.ejs');
+  var resource = new Resource()
+  resource.photo       = req.body.photo
+  resource.name        = req.body.name
+  resource.spin        = req.body.spin
+  resource.description = req.body.description
+  resource.link        = req.body.link
+  resource.pros        = req.body.pros
+  resource.cons        = req.body.cons
+
+  resource.save(function (error) {
+    if (error) console.log("Could not save resource because:" + error )
+  })
+  user.resources.push(resource)
+  response.redirect('/resources')
 };
 
 // GET /resources/:id/edit
