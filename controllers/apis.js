@@ -11,11 +11,6 @@ function getIndex(request, response) {
   });
 }
 
-// GET /api/new
-function getNew(request, response) {
-  response.json({message: "blank"});
-};
-
 // POST /api/new
 function postAPI(request, response) {
   response.json({message: "blank"});
