@@ -19,7 +19,7 @@ var User = mongoose.Schema({
 	education: String,
 	personal_link: String,
 	experience: String,
-	skills: String,
+	skills: [],
 	availibility: String,
 	time_zone: String,
 	status: Boolean,

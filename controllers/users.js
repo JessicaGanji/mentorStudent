@@ -15,8 +15,10 @@ function postSignup(request, response) {
     failureRedirect : '/signup', 
     failureFlash : true 
   });
+  
+  return signUpStrategy(request, response)
 
-  return signUpStrategy(request, response) 
+
 };
 
 // GET /login
