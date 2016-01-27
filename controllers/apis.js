@@ -2,11 +2,11 @@ var User = require('../models/user.js');
 
 // GET /api
 function getIndex(request, response) {
-  User.find({}, function (error, users) {
+  Resource.find({}, function (error, resources) {
     if( error ) { 
       console.log(error);
     } else {
-      response.json( users );
+      response.json( resources );
     } 
   });
 }
