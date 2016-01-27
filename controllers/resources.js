@@ -38,17 +38,48 @@ function postResource (request, response){
 
 // GET /resources/:id/edit
 function getEdit (request, response){
-  response.render('resources/index.ejs');
+  console.log('getEdit RESOURCE')
+
+  var id = request.params.id;
+
+  Resource.findById({_id: id}, function (error, resource){
+    if(error) console.log( "There is an error on this page because:" + error );
+    response.render('resources/edit.ejs', {resource: resource});
+  });
 };
 
-// PATCH /resources/:id/edit
+
+// PUT /resources/:id/edit
 function putResource (request, response){
-  response.render('resources/index.ejs');
+  var id = request.params.id;
+
+  Resource.findById({ _id: id }, function (error, resource){
+    if(error) console.log( "There is an error on this page becuase:" + error );
+
+    if(request.body.photo) resource.photo               = request.body.photo;
+    if(request.body.name) resource.name                 = request.body.name;
+    if(request.body.format) resource.format             = request.body.format;
+    if(request.body.description) resource.description   = request.body.description;
+    if(request.body.link) resource.link                 = request.body.link;
+    if(request.body.pros) resource.pros                 = request.body.pros;
+    if(request.body.cons) resource.cons                 = request.body.cons;
+
+
+    resource.save( function (error){
+      if(error) console.log( "Could not save resource becuase:" + error );  
+      response.redirect('/mentors');
+    })
+  })
 };
 
 // DELETE /resources/:id
 function deleteResource (request, response){
-  response.render('resources/index.ejs');
+  var id = request.params.id;
+
+  Resource.remove({_id: id}, function (error) {
+    if(error) console.log( "Resource has not been deleted due to the following error:" + error );
+    response.redirect('/resources');
+  })
 };
 
 module.exports = {
