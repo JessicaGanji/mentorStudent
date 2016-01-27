@@ -68,17 +68,17 @@
 			</section>
 		<% } %>
 
-		<% if (user == null) { %>
-		<% } else if (user._id == user_profile._id) { %>
-			<section class="btn-primary">
-		    <a href="<%= user._id %>/edit"><h4>Edit</h4></a>
-			</section>
-			<form method="post" action="/mentors/<%= user._id %>">
-				<input type="hidden" name="_method" value="delete" />
-				<button type="submit">Delete</button>
-			</form>
+		<% if (user) { %>
+			<% if (user._id.toString() == user_profile._id.toString()) { %>
+				<section class="btn-primary">
+		    		<a href="<%= user._id %>/edit"><h4>Edit</h4></a>
+				</section>
+				<form method="post" action="/mentors/<%= user._id %>">
+					<input type="hidden" name="_method" value="delete" />
+					<button type="submit">Delete</button>
+				</form>
+			<% } %>
 		<% } %>
-		blah blah bladh
 		
 </div>
 
