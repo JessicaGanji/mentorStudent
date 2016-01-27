@@ -2,13 +2,14 @@ var User = require('../models/user.js');
 
 // GET /api
 function getIndex(request, response) {
-  response.json({message: "blank"});
-};
-
-// GET /api/new
-function getNew(request, response) {
-  response.json({message: "blank"});
-};
+  Resource.find({}, function (error, resources) {
+    if( error ) { 
+      console.log(error);
+    } else {
+      response.json( resources );
+    } 
+  });
+}
 
 // POST /api/new
 function postAPI(request, response) {
@@ -17,11 +18,6 @@ function postAPI(request, response) {
 
 // GET /api/:id
 function getAPI(request, response) {
-  response.json({message: "blank"});
-};
-
-// GET /api/:id/edit
-function getEdit(request, response) {
   response.json({message: "blank"});
 };
 
