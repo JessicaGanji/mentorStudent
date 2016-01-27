@@ -5,7 +5,7 @@ var passport  = require('passport');
 function getIndex (request, response){
   Resource.find({}, function (error, resources) {
     if(error) console.log(error);
-    response.render('resources/index.ejs', {resources: resources})
+    response.render('resources/index.ejs', {resources: resources});
   })
 };
 
@@ -19,19 +19,19 @@ function getNew (request, response){
 // POST /resources/new
 function postResource (request, response){
   var resource = new Resource()
-  resource.photo       = request.body.photo
-  resource.name        = request.body.name
-  resource.format      = request.body.format
-  resource.description = request.body.description
-  resource.link        = request.body.link
-  resource.pros        = request.body.pros
-  resource.cons        = request.body.cons
+
+  resource.photo       = request.body.photo;
+  resource.name        = request.body.name;
+  resource.format      = request.body.format;
+  resource.description = request.body.description;
+  resource.link        = request.body.link;
+  resource.pros        = request.body.pros;
+  resource.cons        = request.body.cons;
 
   resource.save(function (error) {
     if (error) console.log("Could not save resource because:" + error )
   })
-  console.log(user.resources)
-  console.log(resource)
+
   user.resources.push(resource)
   response.redirect('/resources')
 };
@@ -63,7 +63,6 @@ function putResource (request, response){
     if(request.body.link) resource.link                 = request.body.link;
     if(request.body.pros) resource.pros                 = request.body.pros;
     if(request.body.cons) resource.cons                 = request.body.cons;
-
 
     resource.save( function (error){
       if(error) console.log( "Could not save resource becuase:" + error );  

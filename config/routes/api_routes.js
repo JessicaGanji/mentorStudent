@@ -7,15 +7,11 @@ var apisController = require('../../controllers/apis.js');
 
 router.route('/api')
 	.get(apisController.getIndex)
-
-router.route('/api/new')
 	.post(apisController.postAPI)
 
 router.route('/api/:id')
 	.get(apisController.getAPI)
 	.delete(apisController.deleteAPI)
-
-router.route('/api/:id/edit')
 	.put(apisController.putAPI)
 
 module.exports = router

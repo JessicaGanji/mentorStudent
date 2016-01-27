@@ -160,12 +160,12 @@ section{
 }
 
 
-
-
+/* Forms */
 .round-form {
 	border-radius: 8px;
 }
 
+/* Buttons */
 .btn-primary{
 	background-color: #0A9E01;
 	border-width: 0px;
@@ -206,6 +206,11 @@ section{
 }
 
 /* Resource Index */
+
+.resourcecard{
+	padding: 15px;
+	margin-bottom:30px;
+}
 
 .icon img {
 	width:100%;

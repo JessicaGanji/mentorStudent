@@ -14,7 +14,7 @@
   
     <% resources.forEach(function(resource){ %>
       <div class="col-md-3">
-        <section class="namecard">
+        <section class="resourcecard">
           <div class="icon">
             <% if (resource.photo) { %>
               <img src="<%= resource.photo %>">
@@ -29,10 +29,10 @@
           <p><%= resource.pros %></p>
           <h3>Cons:</h3> 
           <p><%= resource.cons %></p>
-          <p><a class="btn btn-primary btn-sm" href="<%= resource.link %>" role="button">Visit Site</a></p> 
+          <p><a class="btn btn-primary btn-sm" href="<%= resource.link %>" target="_blank" role="button">Visit Site</a></p> 
           <% if (user) { %>
            <!--  <div class="btn btn-danger glyphicon glyphicon-trash" id="<%= resource.id %>"></div> -->
-           <button class="delBtn" id="<%= resource.id %>">delete</button>
+            <button class="delBtn" id="<%= resource.id %>">Delete</button>
           <% } %>    
         </section>
       </div>
