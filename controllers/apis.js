@@ -2,8 +2,14 @@ var User = require('../models/user.js');
 
 // GET /api
 function getIndex(request, response) {
-  response.json({message: "blank"});
-};
+  User.find({}, function (error, users) {
+    if( error ) { 
+      console.log(error);
+    } else {
+      response.json( users );
+    } 
+  });
+}
 
 // GET /api/new
 function getNew(request, response) {
