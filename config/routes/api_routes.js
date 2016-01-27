@@ -3,13 +3,13 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var passport = require('passport');
-var apisController = require('../../controllers/api.js');
+var apisController = require('../../controllers/apis.js');
 
 router.route('/api')
 	.get(apisController.getIndex)
 
 router.route('/api/new')
-	.post(apiController.postAPI)
+	.post(apisController.postAPI)
 
 router.route('/api/:id')
 	.get(apisController.getAPI)

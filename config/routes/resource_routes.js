@@ -8,12 +8,11 @@ var resourcesController = require('../../controllers/resources.js');
 router.route('/resources')
 	.get(resourcesController.getIndex)
 
-router.route('/resources/:id/new')
+router.route('/resources/new')
 	.get(resourcesController.getNew)
 	.post(resourcesController.postResource)
 
 router.route('/resources/:id')
-	.get(resourcesController.getResource)
 	.delete(resourcesController.deleteResource)
 
 router.route('/resources/:id/edit')

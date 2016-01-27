@@ -11,16 +11,11 @@ function getIndex (request, response){
 
 // GET /resources/new
 function getNew (request, response){
-  response.render('resources/index.ejs');
+  response.render('resources/new.ejs');
 };
 
 // POST /resources/new
 function postResource (request, response){
-  response.render('resources/index.ejs');
-};
-
-// GET /resources/:id
-function getResource (request, response){
   response.render('resources/index.ejs');
 };
 
@@ -44,7 +39,6 @@ module.exports = {
 	getNew: getNew,
 	postResource: postResource,
 	getEdit: getEdit,
-	getResource: getResource,
 	putResource: putResource,
 	deleteResource: deleteResource
 };
