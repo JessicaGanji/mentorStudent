@@ -67,7 +67,7 @@ function putResource (request, response){
 
     resource.save( function (error){
       if(error) console.log( "Could not save resource becuase:" + error );  
-      response.redirect('/mentors');
+      response.redirect('/resources');
     })
   })
 };
@@ -78,7 +78,7 @@ function deleteResource (request, response){
 
   Resource.remove({_id: id}, function (error) {
     if(error) console.log( "Resource has not been deleted due to the following error:" + error );
-    response.redirect('/resources');
+    //response.redirect('/resources');
   })
 };
 

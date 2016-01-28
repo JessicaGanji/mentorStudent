@@ -14,9 +14,9 @@ router.route('/resources/new')
 
 router.route('/resources/:id')
 	.delete(resourcesController.deleteResource)
+	.put(resourcesController.putResource)
 
 router.route('/resources/:id/edit')
 	.get(resourcesController.getEdit)
-	.put(resourcesController.putResource)
 
 module.exports = router
