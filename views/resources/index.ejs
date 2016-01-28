@@ -43,15 +43,19 @@
       $(function(){
         $('.btn.glyphicon-trash').click(callDelete)
         function callDelete(){
+          var $self = $(this)
           console.log(this.id)
           $.ajax({
               url: '/resources/' + this.id,
-              type: 'DELETE',
+              method: 'DELETE',
               success: function(result) {
-                  console.log(result)
-                  //hack for forcing page reload
-                  location.reload()
-              }
+                console.log(result)
+                //hack for forcing page reload
+                // location.reload()
+                if(result.success){
+                  $self.closest('.namecard').remove()
+                }
+            }
           })
         };
       })

@@ -78,6 +78,7 @@ function deleteResource (request, response){
   Resource.remove({_id: id}, function (error) {
     if(error) console.log( "Resource has not been deleted due to the following error:" + error );
     //response.redirect('/resources');
+    response.json({message: "successfully deleted", success: true})
   })
 };
 
