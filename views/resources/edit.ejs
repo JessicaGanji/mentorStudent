@@ -4,8 +4,8 @@
   <section class="col-md-6 round-form">
     <h3>Add a New Resource</h3>
 
-    <form method="post" action="/resources/new">
-
+    <form method="post" action="/resources/<%= resource._id %>">
+      <input type="hidden" name="_method" value="put">
       <div class="form-group">
         <label for="name">name</label>
         <input class="form-control" type="text" name="name" id="name">

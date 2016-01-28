@@ -23,6 +23,7 @@
             <% } %>
           </div>
           <h3><%= resource.name %></h3> 
+          <p><%= resource.id %></p> 
           <p><%= resource.format %></p> 
           <p><%= resource.description %></p> 
           <h3>Pros:</h3>  
@@ -31,29 +32,29 @@
           <p><%= resource.cons %></p>
           <p><a class="btn btn-primary btn-sm" href="<%= resource.link %>" target="_blank" role="button">Visit Site</a></p> 
           <% if (user) { %>
-           <!--  <div class="btn btn-danger glyphicon glyphicon-trash" id="<%= resource.id %>"></div> -->
-            <button class="delBtn" id="<%= resource.id %>">Delete</button>
+            <div class="btn btn-danger glyphicon glyphicon-trash" id="<%= resource._id %>"></div>
+            <a class="btn btn-info glyphicon glyphicon-pencil" href="resources/<%= resource._id %>/edit"></a>
           <% } %>    
         </section>
       </div>
     <% }) %>
 
     <script type="text/javascript">
-      $('.delBtn').click(callDelete)
-      function callDelete(){
-        console.log(this.id)
-        $.ajax({
-            url: '/resources/' + this.id,
-            type: 'DELETE',
-            success: function(result) {
-                //console.log(result)
-                //hack for forcing page reload
-                //location.reload()
-            }
-        })
-    };
-​
-​
-</script>
-
+      $(function(){
+        $('.btn.glyphicon-trash').click(callDelete)
+        function callDelete(){
+          console.log(this.id)
+          $.ajax({
+              url: '/resources/' + this.id,
+              type: 'DELETE',
+              success: function(result) {
+                  console.log(result)
+                  //hack for forcing page reload
+                  location.reload()
+              }
+          })
+        };
+      })
+    </script>
+    
 </section>
