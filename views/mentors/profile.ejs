@@ -2,10 +2,11 @@
 	<div class="col-md-8">
 		<section class="profile-card">
 			<div class="avatar">
-				<% if (user_profile.photo) { %>
-					<img src="<%= user_profile.photo %>">
+
+				<% if (user_profile.avatar_url == null) { %>
+					<img src="/images/profile.png">
 				<% } else { %>
-					<img src="./../images/placeholder.png">
+					<img src="<%= user_profile.avatar_url %>">
 				<% } %>
 			</div>
 

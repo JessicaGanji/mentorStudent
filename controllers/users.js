@@ -61,21 +61,26 @@ function getProfile(request, response) {
     } else {
       response.render('mentors/profile.ejs', {user_profile: user_profile});
     };
+    console.log(user_profile.avatar_url)
   });
+  
 };
 
 // GET /mentors/:id/edit
 function getEdit(request, response) {
+  console.log(user.avatar_url)
   var id = request.params.id;
 
   User.findById({_id: id}, function (error, user){
     if(error) console.log( "There is an error on this page because:" + error );
     response.render('mentors/edit.ejs', {user: user});
+    console.log(user.avatar_url)
   });
 };
 
 // PUT /mentors/:id
 function putProfile(request, response) {
+  console.log(user.avatar_url)
   var id = request.params.id;
 
   User.findById({ _id: id }, function (error, user){
@@ -84,7 +89,7 @@ function putProfile(request, response) {
     if(request.body.first_name) user.first_name         = request.body.first_name;
     if(request.body.last_name) user.last_name           = request.body.last_name;
     if(request.body.headline) user.headline             = request.body.headline;
-    if(request.body.photo) user.photo                   = request.body.photo;
+    if(request.body.avatar_url) user.avatar_url         = request.body.avatar_url;
     if(request.body.location) user.location             = request.body.location;
     if(request.body.focus) user.focus                   = request.body.focus;
     if(request.body.intro) user.intro                   = request.body.intro;
@@ -98,6 +103,8 @@ function putProfile(request, response) {
     if(request.body.time_zone) user.time_zone           = request.body.time_zone;
     if(request.body.status) user.status                 = request.body.status;
 
+    console.log(request.body.avatar_url)
+    console.log(user.avatar_url)
     user.save( function (error){
       if(error) console.log( "Could not save user becuase:" + error );  
       response.redirect('/mentors/' + id);
