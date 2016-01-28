@@ -30,6 +30,4 @@ router.route('/mentors/:id')
 	.put(usersController.putProfile)
 	.delete(usersController.deleteProfile)
 
-
-
 module.exports = router

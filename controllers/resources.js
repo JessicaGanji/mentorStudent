@@ -49,7 +49,7 @@ function getEdit (request, response){
 };
 
 
-// PUT /resources/:id/edit
+// PUT /resources/:id
 function putResource (request, response){
   var id = request.params.id;
 

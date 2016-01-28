@@ -12,13 +12,13 @@ function getIndex(request, response) {
 function postAPI(request, response) {
   var resource = new Resource()
 
-  resource.photo       = request.body.photo
-  resource.name        = request.body.name
-  resource.format      = request.body.format
-  resource.description = request.body.description
-  resource.link        = request.body.link
-  resource.pros        = request.body.pros
-  resource.cons        = request.body.cons
+  resource.photo       = request.body.photo;
+  resource.name        = request.body.name;
+  resource.format      = request.body.format;
+  resource.description = request.body.description;
+  resource.link        = request.body.link;
+  resource.pros        = request.body.pros;
+  resource.cons        = request.body.cons;
 
   resource.save(function (error) {
     if(error) response.json({ message: "POST ERROR:" + error });
