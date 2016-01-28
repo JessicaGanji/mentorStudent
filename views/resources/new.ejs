@@ -2,38 +2,42 @@
   <div class="col-md-3"></div>
 
   <section class="col-md-6 round-form">
-    <h3>Add a New Resource</h3>
+    <h3>Add a New Resource</h3><hr>
 
     <form method="post" action="/resources/new">
 
       <div class="form-group">
-        <label for="name">name</label>
+        <label for="name">Name</label>
         <input class="form-control" type="text" name="name" id="name">
       </div>
 
       <div class="form-group">
-        <label for="format">format</label>
-        <input class="form-control" type="text" name="format" id="format">
+        <label for="format">Format</label>
+        <select class="form-control" name="format" id="format">
+          <option>Video</option>
+          <option>Docs</option>
+          <option>Lessons</option>
+        </select>
+      </div> 
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" rows="4" type="text"  name="description" id="description"></textarea>
       </div>
 
       <div class="form-group">
-        <label for="description">description</label>
-        <input class="form-control" type="text" name="description" id="description">
+        <label for="link">Link</label>
+        <input class="form-control" type="text" placeholder="http://"  name="link" id="link">
       </div>
 
       <div class="form-group">
-        <label for="link">link</label>
-        <input class="form-control" type="text" name="link" id="link">
+        <label for="pros">Pros</label>
+        <textarea class="form-control" rows="4" type="text"  name="pros" id="pros"></textarea>
       </div>
 
       <div class="form-group">
-        <label for="pros">pros</label>
-        <input class="form-control" type="text" name="pros" id="pros">
-      </div>
-
-      <div class="form-group">
-        <label for="cons">cons</label>
-        <input class="form-control" type="text" name="cons" id="cons">
+        <label for="cons">Cons</label>
+        <textarea class="form-control" rows="4" type="text"  name="cons" id="cons"></textarea>
       </div>
 
       <input class="btn btn-default" type="submit">

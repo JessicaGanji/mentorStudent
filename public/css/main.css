@@ -11,7 +11,14 @@ body{
 }
 
 h1, h2, h3, h4, h5{
+	color:#000;
 	font-weight: 600;
+	margin: 1;
+}
+
+a, a:hover, a:focus, a:active, a:visited{
+	color:#0A9E01;
+	text-decoration: none;
 }
 
 section{
@@ -21,7 +28,7 @@ section{
 }
 
 .background {
-	background-color: #f2f2f2;
+	background-color: #f5f5f5;
 	padding: 30px 30px;
 	/*padding: 30px 30px 15px 30px;*/
 }
@@ -43,6 +50,10 @@ section{
 
 
 /* Nav */
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+	color:#fff;
+}
+
 .navbar-default{
 	background-color: #000;
 	border-width: 0px;
@@ -63,10 +74,17 @@ section{
 }
 
 .pop{
-	background-color: #333;
+	background-color: #444;
 	border-radius: 4px;
 }
 
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+	background:#000;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+	background-color:##f5f5f5;
+}
 
 
 /* Index */
@@ -93,6 +111,7 @@ section{
 }
 
 .yinyang h2 {
+	color: #fff;
 	padding-top: 30px;
 }
 
@@ -166,6 +185,11 @@ section{
 }
 
 /* Buttons */
+a.btn{
+	color:#fff;
+	text-decoration: none;
+}
+
 .btn-primary{
 	background-color: #0A9E01;
 	border-width: 0px;
@@ -176,9 +200,45 @@ section{
 	border-width: 0px;
 }
 
-.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+ .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
 	background-color: #0cc501;
 	border-width: 0px;	
+}
+
+.btn-full{
+	width:100%;
+}
+
+.btn-half-left{
+	width:50%;
+	border-radius: 4px 0 0 4px;
+}
+
+.btn-half-right{
+	width:50%;
+	border-radius: 0 4px 4px 0;
+}
+
+.glyphicon-pencil{
+	font-size:13px;
+}
+
+.glyphicon-trash{
+	font-size:13px;
+}
+
+.btn-primary h4{
+	color: #fff;
+}
+
+.btn-edit, .btn-edit h4{
+	background-color: blue;
+	color: #fff;
+}
+
+.btn-delete, .btn-delete h4{
+	background-color: red;
+	color: #fff;
 }
 
 /* Mentor Index/Profile */
@@ -205,17 +265,69 @@ section{
 	float:right;
 }
 
-/* Resource Index */
+.namecard h1{
+	font-size: 22px;
+}
 
-.resourcecard{
+.namecard h2{
+	font-size: 16px;
+}
+
+.namecard h3{
+	font-size: 12px;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+	background-color: #0A9E01;
+	border-radius: 0px;
+	border-width: 0px;
+}
+
+a.list-group-item, button.list-group-item{
+	border-radius: 0px;
+	border-width: 1px 0;
+	border-color: #f5f5f5;
+}
+
+.list-group-item:last-child{
+	border-radius: 0px;
+	border-width: 1px 0 0 0;
+	border-color: #f5f5f5;	
+}
+
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover{
+	background-color: #0cc501;
+	color: #fff;
+}
+
+
+/* Search */
+.input-group .form-control, .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group{
+	margin-top: 8px;
+	margin-bottom: 0px; 
+}
+
+/* Resource Index */
+.resource-card{
 	padding: 15px;
 	margin-bottom:30px;
 }
 
-.icon img {
+.icon img{
 	width:100%;
 }
 
+.resource-card h3{
+	font-size: 18px;
+}
+
+.resource-card h4{
+	font-size: 14px;
+}
+
+.resource-card p{
+	font-size: 13px;
+}
 
 /* Footer */
 footer{
@@ -226,5 +338,5 @@ footer{
 }
  
 footer p{
-	color: #f2f2f2;
+	color: #f5f5f5;
 } 

@@ -10,9 +10,9 @@
 			</div>
 
 			<div class="info">
-				<h5><%= user_profile.first_name %> <%= user_profile.last_name %></h5>
-				<h5><%= user_profile.headline %></h5>
-				<h5><%= user_profile.location %></h5>
+				<h1><%= user_profile.first_name %> <%= user_profile.last_name %></h1>
+				<h2><%= user_profile.headline %></h2>
+				<h4><%= user_profile.location %></h4>
 			</div>
 
 			<div style="clear:both;"></div>	
@@ -25,7 +25,7 @@
 		    <h5>Focus: <%= user_profile.focus %></h5>
 	   	<% } %> 
 	   	<% if (user_profile.personal_link) { %>
-				<h5>Portfolio: <a href="<%= user_profile.personal_link %>" ><%= user_profile.personal_link %></a></h5>
+				<h5>Portfolio: <a href="<%= user_profile.personal_link %>" target="_blank"><%= user_profile.personal_link %></a></h5>
 			<% } %>
 		</section>
 
@@ -40,7 +40,7 @@
 	    <section class="part">
 		    <h3>Work Experience</h3>
 		    <p><%= user_profile.experience %></p>
-				<h5>Company: <a href="<%= user_profile.company_link %>" ><%= user_profile.company %></a></h5>
+				<h5>Company: <a href="<%= user_profile.company_link %>" target="_blank"><%= user_profile.company %></a></h5>
 			</section>
 		<% } %>
 
@@ -59,8 +59,9 @@
 			</section>
 	    <section class="part">
 	    	<h3>Availibility</h3>
-		    <h5><%= user_profile.availibility %></h5>
-				<h5>Time Zone: <%= user_profile.time_zone %></h5>
+		    <p><%= user_profile.availibility %></p><hr>
+				<h5>Time Zone</h5>
+				<p><%= user_profile.time_zone %></p>
 			</section>
 		<% } else { %>
 	    <section class="btn-primary">
@@ -70,36 +71,13 @@
 
 		<% if (user) { %>
 			<% if (user._id.toString() == user_profile._id.toString()) { %>
-				<section class="btn-primary">
-		    		<a href="<%= user._id %>/edit"><h4>Edit</h4></a>
-				</section>
+				<section class="btn-edit"><a href="<%= user._id %>/edit"><h4>Edit</h4></a></section>
+				<section class="btn-delete">
 				<form method="post" action="/mentors/<%= user._id %>">
 					<input type="hidden" name="_method" value="delete" />
 					<button type="submit">Delete</button>
 				</form>
+				</section>
 			<% } %>
 		<% } %>
-		
 </div>
-
-
-
-<!--      <section class="part">
-			    <p><%= user_profile.experiences %></p>
-		    	<h5>Name: <%= user_profile.first_name %></h5>
-					<h5>Name: <%= user_profile.last_name %></h5>
-					<h5>Headline: <%= user_profile.headline %></h5>
-					<h5>Photo: <%= user_profile.photo %></h5>
-					<h5>Location: <%= user_profile.location %></h5>
-					<h5>Focus: <%= user_profile.focus %></h5>
-					<h5>Intro: <%= user_profile.intro %></h5>
-					<h5>Company: <%= user_profile.company %></h5>
-					<h5>company_link: <%= user_profile.company_link %></h5>
-					<h5>education: <%= user_profile.education %></h5>
-					<h5>personal_link: <%= user_profile.personal_link %></h5>
-					<h5>experiences: <%= user_profile.experiences %></h5>
-					<h5>skills: <%= user_profile.skills %></h5>
-					<h5>Availibility: <%= user_profile.availibility %></h5>
-					<h5>Time Zone: <%= user_profile.time_zone %></h5>
-					<h5>Status: <%= user_profile.status %></h5>
-				</section> -->

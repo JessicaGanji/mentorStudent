@@ -90,13 +90,13 @@ function putProfile(request, response) {
     if(request.body.intro) user.intro                   = request.body.intro;
     if(request.body.company) user.company               = request.body.company;
     if(request.body.company_link) user.company_link     = request.body.company_link;
-    if(request.body.education) user.education         = request.body.education;
+    if(request.body.education) user.education           = request.body.education;
     if(request.body.personal_link) user.personal_link   = request.body.personal_link;
-    if(request.body.experience) user.experience       = request.body.experience;
+    if(request.body.experience) user.experience         = request.body.experience;
     if(request.body.skills) user.skills                 = request.body.skills;
     if(request.body.availibility) user.availibility     = request.body.availibility;
+    if(request.body.time_zone) user.time_zone           = request.body.time_zone;
     if(request.body.status) user.status                 = request.body.status;
-    if(request.body.terms) user.terms                   = request.body.terms;
 
     user.save( function (error){
       if(error) console.log( "Could not save user becuase:" + error );  

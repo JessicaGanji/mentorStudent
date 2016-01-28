@@ -2,7 +2,7 @@
   <div class="col-md-3"></div>
 
   <section class="col-md-6 round-form">
-    <h3>Step Two: Edit your Profile</h3>
+    <h3>Profile Settings</h3><hr>
 
     <form method="post" action="/mentors/<%= user._id %>">
       <input type="hidden" name="_method" value="put">
@@ -24,23 +24,22 @@
       </div>
 
       <div class="form-group">
+        <label for="intro">Introduction</label>
+        <textarea class="form-control" rows="4" type="text" name="intro" id="intro"><%= user.intro %></textarea>
+      </div>
+
+      <div class="form-group">
         <label for="headline">Headline</label>
         <input class="form-control" type="text" value="<%= user.headline %>" name="headline" id="headline">
       </div>
 
       <div class="form-group">
-        <label for="intro">Introduction</label>
-        <input class="form-control" type="text" value="<%= user.intro %>" name="intro" id="intro">
-      </div>
-
-      <div class="form-group">
         <label for="focus">Focus</label>
-        <select class="form-control" value="<%= user.focus %>" id="focus">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+        <select class="form-control" name="focus" id="focus">
+          <option>Game Design</option>
+          <option>Web Development</option>
+          <option>Software Development</option>
+          <option>Cyber Security</option>
         </select>
       </div>
 
@@ -61,7 +60,7 @@
 
       <div class="form-group">
         <label for="education">Education</label>
-        <input class="form-control" type="text" value="<%= user.education %>" name="education" id="education">
+        <textarea class="form-control" rows="4" type="text" name="education" id="education"><%= user.education %></textarea>
       </div> 
 
       <div class="form-group">
@@ -71,7 +70,7 @@
 
       <div class="form-group">
         <label for="experience">Experience</label>
-        <input class="form-control" type="text" value="<%= user.experience %>" name="experience" id="experience">
+        <textarea class="form-control" rows="8" type="text" name="experience" id="experience"><%= user.experience %></textarea>
       </div> 
 
       <div class="form-group">
@@ -86,17 +85,21 @@
 
       <div class="form-group">
         <label for="availibility">Availibility</label>
-        <input class="form-control" type="text" value="<%= user.availibility %>" name="availibility" id="availibility">
+        <textarea class="form-control" rows="4" type="text" name="availibility" id="availibility"><%= user.availibility %></textarea>
       </div> 
 
       <div class="form-group">
         <label for="time_zone">Time Zone</label>
-        <select class="form-control" value="<%= user.time_zone %>" name="time_zone" id="time_zone">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+        <select class="form-control" name="time_zone" id="time_zone">
+          <option>Samoa Time Zone - UTC-11:00</option>
+          <option>Hawaii-Aleutian Time Zone - UTC-10:00</option>
+          <option>Alaska Time Zone - UTC-09:00</option>
+          <option>Pacific Time Zone - UTC-08:00</option>
+          <option>Mountain Time Zone - UTC-07:00</option>
+          <option>Central Time Zone - UTC-06:00</option>
+          <option>Eastern Time Zone - UTC-05:00</option>
+          <option>Atlantic Time Zone - UTC-04:00</option>
+          <option>Chamorro Time Zone - UTC+10:00</option>
         </select>
       </div> 
 
@@ -116,7 +119,7 @@
         </div>
       </div> 
 
-      <button type="submit">Submit Info</button>
+      <input class="btn btn-default" type="submit">
 
     </form>
   </section>
