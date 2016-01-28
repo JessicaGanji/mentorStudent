@@ -16,6 +16,16 @@ h1, h2, h3, h4, h5{
 	margin: 1;
 }
 
+p{
+	white-space: pre-wrap;
+}
+
+.side-line{
+	border-style: solid;
+	border-width: 0 0 0 5px;
+	border-color: #0A9E01;
+}
+
 a, a:hover, a:focus, a:active, a:visited{
 	color:#0A9E01;
 	text-decoration: none;
@@ -231,50 +241,51 @@ a.btn{
 	color: #fff;
 }
 
-.btn-edit, .btn-edit h4{
-	background-color: blue;
+.btn-edit{
+	border-radius: 4px 4px 0 0;
+	background-color: #5bc0de;
+}
+
+.btn-delete{ 
+	border-radius: 0 0 4px 4px;
+	background-color: #d9534f;
+}
+
+.btn-edit h4, .btn-delete h4{
 	color: #fff;
 }
 
-.btn-delete, .btn-delete h4{
-	background-color: red;
-	color: #fff;
-}
+/* Mentor Index */
 
-/* Mentor Index/Profile */
-
-.namecard{
+.name-card{
 	padding: 15px;
 	margin-bottom:15px;
 }
 
-.avatar{
+.name-card .avatar{
 	width:20%;
 	display: block;
 	float:left;
 }
 
-.avatar img {
+.name-card .avatar img {
 	width:100%;
 }
 
-.info{
+.name-card .info{
 	width:80%;
 	display: block;
 	padding-left: 15px;
 	float:right;
 }
 
-.namecard h1{
+.name-card h2{
 	font-size: 22px;
+	margin:0;
 }
 
-.namecard h2{
+.name-card h3{
 	font-size: 16px;
-}
-
-.namecard h3{
-	font-size: 12px;
 }
 
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
@@ -300,6 +311,43 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 	color: #fff;
 }
 
+
+
+
+/* Mentor Profile */
+.profile-card{
+	padding: 15px;
+	margin-bottom:15px;
+}
+
+.profile-card .avatar{
+	width:30%;
+	display: block;
+	float:left;
+}
+
+.profile-card .avatar img {
+	width:100%;
+}
+
+.profile-card .info{
+	width:70%;
+	display: block;
+	padding-left: 15px;
+	float:right;
+}
+
+.profile-card h1{
+	font-size: 22px;
+}
+
+.profile-card h2{
+	font-size: 16px;
+}
+
+.profile-card h3{
+	font-size: 12px;
+}
 
 /* Search */
 .input-group .form-control, .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group{
@@ -329,6 +377,20 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 	font-size: 13px;
 }
 
+.pros{
+	border-style: solid;
+	border-width: 0 0 0 5px;
+	border-color: #0A9E01;
+	padding-left: 5px;
+}
+
+.cons{
+	border-style: solid;
+	border-width: 0 0 0 5px;
+	border-color: #0A9E01;
+	padding-left: 5px;	
+}
+
 /* Footer */
 footer{
 	background-color: #000;
@@ -339,4 +401,4 @@ footer{
  
 footer p{
 	color: #f5f5f5;
-} 
+}

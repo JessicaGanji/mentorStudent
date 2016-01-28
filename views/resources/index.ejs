@@ -13,7 +13,7 @@
 <section class="row background">
   
     <% resources.forEach(function(resource){ %>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <section class="resource-card">
           <div class="icon">
             <% if (resource.photo) { %>
@@ -28,13 +28,17 @@
           <p><%= resource.description %></p><hr>
 
           <% if (resource.pros) { %>
+          <div class="pros">
             <h4>Pros:</h4>  
-            <p><%= resource.pros %></p><hr>
+            <p><%= resource.pros %></p>
+            </div><hr>
           <% } %>
 
           <% if (resource.cons) { %>
+            <div class="cons">
             <h4>Cons:</h4> 
-            <p><%= resource.cons %></p><hr>
+            <p><%= resource.cons %></p>
+            </div><hr>
           <% } %>
 
           <p><a class="btn btn-primary btn-md btn-full" href="<%= resource.link %>" target="_blank" role="button">Visit Site</a></p>
@@ -58,7 +62,7 @@
             success: function(result) {
               console.log(result)
               if(result.success){
-                $self.closest('.col-md-3').remove()
+                $self.closest('.col-md-4').remove()
               }
             }
           })

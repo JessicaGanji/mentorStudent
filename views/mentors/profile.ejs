@@ -1,6 +1,6 @@
 <section class="row background">
 	<div class="col-md-8">
-		<section class="namecard">
+		<section class="profile-card">
 			<div class="avatar">
 				<% if (user_profile.photo) { %>
 					<img src="<%= user_profile.photo %>">
@@ -10,15 +10,16 @@
 			</div>
 
 			<div class="info">
-				<h1><%= user_profile.first_name %> <%= user_profile.last_name %></h1>
-				<h2><%= user_profile.headline %></h2>
+				<h1><%= user_profile.first_name %> <%= user_profile.last_name %> - <%= user_profile.headline %></h1>
 				<h4><%= user_profile.location %></h4>
 			</div>
 
 			<div style="clear:both;"></div>	
+		
+			<hr><p>thebestsiteever.com/mentors/<%= user_profile._id %></p>
 		</section>
 
-    <section class="part">
+	  <section class="part side-line">
 	    <h3>Introduction</h3>
 	    <p><%= user_profile.intro %></p>
 	    <% if (user_profile.focus) { %>
@@ -30,22 +31,23 @@
 		</section>
 
     <% if (user_profile.skills.length >= 1 ) { %>
-	    <section class="part">
+	    <section class="part side-line">
 		    <h3>Skills</h3>
 		    <p><%= user_profile.skills %></p>
 			</section>
 		<% } %>
 
     <% if (user_profile.experience) { %>
-	    <section class="part">
-		    <h3>Work Experience</h3>
+	    <section class="part side-line">
+		    <h3>Experience</h3>
+		    <h5>Current Place of Employment: <a href="<%= user_profile.company_link %>" target="_blank"><%= user_profile.company %></a></h5>
+
 		    <p><%= user_profile.experience %></p>
-				<h5>Company: <a href="<%= user_profile.company_link %>" target="_blank"><%= user_profile.company %></a></h5>
 			</section>
 		<% } %>
 
     <% if (user_profile.education) { %>
-	    <section class="part">
+	    <section class="part side-line">
 		    <h3>Education</h3>
 		    <p><%= user_profile.education %></p>
 			</section>
@@ -67,15 +69,21 @@
 	    <section class="btn-primary">
 		    <h4>Sorry, <%= user_profile.first_name %> is not currently able to be a mentor.</h4>
 			</section>
+			<section class="part">
+	    	<h3>Availibility</h3>
+		    <p>TBD</p><hr>
+				<h5>Time Zone</h5>
+				<p><%= user_profile.time_zone %></p>
+			</section>
 		<% } %>
 
 		<% if (user) { %>
 			<% if (user._id.toString() == user_profile._id.toString()) { %>
-				<section class="btn-edit"><a href="<%= user._id %>/edit"><h4>Edit</h4></a></section>
+				<section class="btn-edit"><a href="<%= user._id %>/edit"><h4>Edit Profile</h4></a></section>
 				<section class="btn-delete">
 				<form method="post" action="/mentors/<%= user._id %>">
 					<input type="hidden" name="_method" value="delete" />
-					<button type="submit">Delete</button>
+					<button type="submit"><h4>Delete Account</h4></button>
 				</form>
 				</section>
 			<% } %>
