@@ -14,7 +14,7 @@
   
     <% resources.forEach(function(resource){ %>
       <div class="col-md-3">
-        <section class="namecard">
+        <section class="resourcecard">
           <div class="icon">
             <% if (resource.photo) { %>
               <img src="<%= resource.photo %>">
@@ -46,15 +46,13 @@
           var $self = $(this)
           console.log(this.id)
           $.ajax({
-              url: '/resources/' + this.id,
-              method: 'DELETE',
-              success: function(result) {
-                console.log(result)
-                //hack for forcing page reload
-                // location.reload()
-                if(result.success){
-                  $self.closest('.namecard').remove()
-                }
+            url: '/resources/' + this.id,
+            method: 'DELETE',
+            success: function(result) {
+              console.log(result)
+              if(result.success){
+                $self.closest('.col-md-3').remove()
+              }
             }
           })
         };
