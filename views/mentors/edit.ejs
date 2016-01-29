@@ -22,11 +22,11 @@
         <input type="file" id="file_input"/>
         <p id="status">Please select a file</p>
         <img style="border:1px solid gray;width:300px;"  id="preview" src=
-        <% if ( user.avatar_url == null) { "/images/default.png" %>
+        <% if ( user.avatar_url == null) { "/images/profile.png" %>
         <% } else { %>"<%= user.avatar_url %>"
         <% } %>/>
         <input type="hidden" id="avatar_url" name="avatar_url" value=
-        <% if ( user.avatar_url == null) { "/images/default.png" %>
+        <% if ( user.avatar_url == null) { "/images/profile.png" %>
         <% } else { %>"<%= user.avatar_url %>"
         <% } %>/>
         <p class="help-block">Example block-level help text here.</p>
