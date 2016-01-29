@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
 var Resource = mongoose.Schema({	
-	photo: String,
+	avatar_url: String,
 	name: String,
 	format: String,
 	description: String,
