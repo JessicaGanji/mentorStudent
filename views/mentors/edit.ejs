@@ -22,14 +22,20 @@
         <input type="file" id="file_input"/>
         <p id="status">Please select a file</p>
         <img style="border:1px solid gray;width:300px;"  id="preview" src=
-        <% if ( user.avatar_url == null) { "/images/profile.png" %>
-        <% } else { %>"<%= user.avatar_url %>"
-        <% } %>/>
+          <% if ( user.avatar_url == null) { %>
+            "/images/profile.png"
+          <% } else { %>
+            "<%= user.avatar_url %>"
+          <% } %>
+        />
         <input type="hidden" id="avatar_url" name="avatar_url" value=
-        <% if ( user.avatar_url == null) { "/images/profile.png" %>
-        <% } else { %>"<%= user.avatar_url %>"
-        <% } %>/>
-        <p class="help-block">Must be under 4 .</p>
+          <% if ( user.avatar_url == null) { %>
+            "/images/profile.png"
+          <% } else { %>
+            "<%= user.avatar_url %>"
+          <% } %>
+        />
+        <p class="help-block">Must be smaller than 4 MB.</p>
       </div>
 
       <div class="form-group">
@@ -59,7 +65,7 @@
 
       <div class="form-group">
         <label for="company_link">Company Website</label>
-        <input class="form-control" type="url" value="<%= user.company_link %>" name="company_link" id="company_link">
+        <input class="form-control" type="url" value="<%= user.company_link %>" name="company_link" placeholder="http://" id="company_link">
       </div> 
 
       <div class="form-group">
@@ -74,7 +80,7 @@
 
       <div class="form-group">
         <label for="personal_link">Personal Website</label>
-        <input class="form-control" type="url" value="<%= user.personal_link %>" name="personal_link" id="personal_link">
+        <input class="form-control" type="url" value="<%= user.personal_link %>" name="personal_link" placeholder="http://" id="personal_link">
       </div> 
 
       <div class="form-group">
