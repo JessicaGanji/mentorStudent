@@ -1,6 +1,6 @@
 var User        = require('../models/user.js');
 var passport    = require('passport');
-var gmailKey    = require('../config/key.js');
+var H_GMAIL_KEY = process.env.H_GMAIL_KEY || require('../config/key.js');
 
 // GET /signup
 function getSignup(request, response) {
@@ -59,7 +59,6 @@ function getProfile(request, response) {
     } else {
       response.render('mentors/profile.ejs', {user_profile: user_profile});
     };
-    console.log(user_profile.avatar_url)
   });
   
 };
@@ -142,18 +141,16 @@ function postMessage(request, response) {
 
   User.findById({_id: id}, function (error, message_user){
     if(error) console.log( "There is an error sending your message because:" + error );
-    response.json({message: message_user.local.email })
     console.log(message_user.local.email)
 
     var nodemailer  = require('nodemailer');
 
     // create reusable transporter object using the default SMTP transport
-    var transporter = nodemailer.createTransport(gmailKey);
+    var transporter = nodemailer.createTransport(H_GMAIL_KEY);
 
     var mailOptions = {
         from: 'WDI_20_LA Project Three',
-        to: recipient,
-        to: email,
+        to: [recipient, email],
         subject: subject,
         text: message,
         html: message
@@ -166,8 +163,8 @@ function postMessage(request, response) {
         }
         console.log('Message sent: ' + info.response);
     });
-
   });
+  response.redirect('/confirmation')
 };
 
 module.exports = {

@@ -18,9 +18,14 @@ function getQuiz(request, response) {
   response.render('statics/quiz.ejs');
 }
 
+function getConfirm (request, response) {
+  response.render('statics/confirmation.ejs')
+}
+
 module.exports = {
 	getIndex: getIndex,
 	getAbout: getAbout, 
 	getResources: getResources,
-	getQuiz: getQuiz
+	getQuiz: getQuiz,
+	getConfirm: getConfirm
 }

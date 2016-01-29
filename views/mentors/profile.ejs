@@ -86,12 +86,13 @@
 <% } else { %>
 	<section class="row background incomplete">
 		<img src="incomplete.png">
-		<h2>Apologies, young grasshopper..</h2>
-		<p><a href="mentors/">This user has not yet completed his/her profile. Please check back soon.</a></p>
 		<% if (user) { %>
 			<% if (user._id.toString() == user_profile._id.toString()) { %>
 				<h2>Complete your profile <a href="/mentors/<%= user._id%>/edit">here</a> if you wish to be considered by young grasshoppers.</h2>
 			<% } %>
+		<% } else { %>
+			<h2>Apologies, young grasshopper..</h2>
+			<p><a href="mentors/">This user has not yet completed his/her profile. Please check back soon.</a></p>
 		<% } %>
 	</section>
 <% } %>	
