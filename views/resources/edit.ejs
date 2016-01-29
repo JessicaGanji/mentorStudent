@@ -13,6 +13,15 @@
       </div>
 
       <div class="form-group">
+        <label for="avatar_url">Resource Photo</label>
+        <input type="file" id="file_input"/>
+        <p id="status">Please select a file</p>
+        <img style="border:1px solid gray;width:300px;" id="preview" src="/images/placeholder.png"/>
+        <input type="hidden" id="avatar_url" name="avatar_url" value="/images/placeholder.png"/>
+        <p class="help-block">Example block-level help text here.</p>
+      </div>
+
+      <div class="form-group">
         <label for="format">Format</label>
         <select class="form-control" name="format" id="format">
           <option>Video</option>
