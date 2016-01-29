@@ -20,7 +20,7 @@ function getNew (request, response){
 function postResource (request, response){
   var resource = new Resource()
 
-  resource.photo       = request.body.photo;
+  resource.avatar_url  = request.body.avatar_url;
   resource.name        = request.body.name;
   resource.format      = request.body.format;
   resource.description = request.body.description;
