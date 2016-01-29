@@ -349,6 +349,12 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 	font-size: 12px;
 }
 
+.incomplete{
+	text-align: center;
+	padding-top: 10%;
+	padding-bottom: 10%;
+}
+
 /* Search */
 .input-group .form-control, .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group{
 	margin-top: 8px;

@@ -2,17 +2,33 @@
   <div class="col-md-3"></div>
 
   <section class="col-md-6 round-form">
-    <h3>Step Two: Edit your Profile</h3>
+    <h3>Send <%= message_user.first_name%> a Message</h3><hr>
 
-    <form>
+    <form method="post" action="/mentors/<%= message_user._id %>/message">
+
       <div class="form-group">
-        <label for="first_name">First Name</label>
-        <input class="form-control" type="text" name="first_name" id="first_name">
+        <label for="recipient"><%= message_user.first_name%>'s Email Address</label>
+        <input class="form-control" type="text" value ="<%= message_user.local.email %>" name="recipient" id="recipient">
       </div>
 
       <div class="form-group">
-        <label for="last_name">Last Name</label>
-        <input class="form-control" type="password" name="password" id="password">
+        <label for="email">Email Address</label>
+        <input class="form-control" type="text" name="email" id="email">
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input class="form-control" type="text" name="subject" id="subject">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" type="text" name="name" id="name">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" rows="4" type="text" name="message" id="message">Hello!</textarea>
       </div>
 
       <input class="btn btn-default" type="submit">
