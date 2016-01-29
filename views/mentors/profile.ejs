@@ -86,17 +86,23 @@
 	</div>
 <% } else { %>
 	<section class="row background incomplete">
-		<img src="./images/no.png" "width=40px">
-		<% if (user) { %>
-			<% if (user._id.toString() == user_profile._id.toString()) { %>
-				<h3>Welcome</h3>
-				<p>Complete your profile <a href="/mentors/<%= user._id%>/edit">here</a> if you wish to be considered by young grasshoppers.</p>
+  	<div class="col-md-3"></div>
+
+  	<div class="col-md-6">
+			<img src="/images/no.png" width="60px">
+			<% if (user) { %>
+				<% if (user._id.toString() == user_profile._id.toString()) { %>
+					<h3>Welcome</h3>
+					<p>Complete your profile <a href="/mentors/<%= user._id%>/edit">here</a> if you wish to be considered by young grasshoppers.</p>
+				<% } else { %>
+					<p>This fellow mentor has not yet completed his/her profile. Please check back soon.</p>
+				<% } %>
 			<% } else { %>
-				<p>This fellow mentor has not yet completed his/her profile. Please check back soon.</p>
+				<h2>Apologies</h2>
+				<p>This user has not yet completed his/her profile. Please check back soon. Browse more mentors <strong><a href="mentors/">here</a></strong>.</p>
 			<% } %>
-		<% } else { %>
-			<h2>Apologies, young grasshopper..</h2>
-			<p>This user has not yet completed his/her profile. Please check back soon. Browse more mentors <a href="mentors/">here</a>.</p>
-		<% } %>
+		</div>
+	  
+	  <div class="col-md-3"></div>	
 	</section>
 <% } %>	

@@ -370,6 +370,16 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 	padding-bottom: 15%;
 }
 
+.incomplete h2{
+	font-size: 30px;
+}
+
+.incomplete a{
+	color: #B30000;
+}
+
+
+
 /* Search */
 .input-group .form-control, .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group{
 	margin-top: 8px;
