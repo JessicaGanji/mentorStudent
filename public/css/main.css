@@ -53,12 +53,17 @@ section{
 
 .request{
 	background-color: #0A9E01;
-	margin-bottom:15px;
+	margin-bottom:13px;
 }
 
 
 
 /* Nav */
+
+.logo{
+	margin-top: -15px;
+}
+
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
 	color:#fff;
 }

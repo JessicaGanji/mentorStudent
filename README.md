@@ -1,10 +1,10 @@
-# Student.mentor() 
+# mentor(student)
 
-Our project aims to connect low income students to tech mentorship.
+Our project aims to connect  students to tech mentors.
 
 If you fork this repo, you must run `npm install` in order for the app to function properly.
 
-[Visit Student.mentor() on Heroku](https://blank.herokuapp.com/)
+[Visit mentor(student) on Heroku](http://mighty-waters-89234.herokuapp.com/)
 
 -
 
@@ -17,6 +17,10 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 * MongoDB
 
 * Passport.js
+
+* AWS
+
+* Node Mailer
 
 * Bootstrap
 
@@ -52,6 +56,14 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 
 ##### Mentor Model
 ``` email, password, first_name, last_name, headline, location, area_of_expertise, bio, personal_website, compary_website, experiences, skills, availibility, status, terms ```
+ 
+![ Student.mentor() ERD ](readme/new_erd.jpg)
+
+##### Mentor Model
+``` local: { email: String, password: String }, first_name: String, last_name: String, headline: String, avatar_url: String, location: String, focus: String, intro: String, company: String, company_link: String, education: String, personal_link: String, experience: String, skills: [], availibility: String, time_zone: String, status: Boolean, resources: [ResourceSchema] ```
+
+##### Resource Model
+``` avatar_url: String, name: String, format: String, description: String, link: String, pros: String, cons: String  ```
 
 -
 
