@@ -59,7 +59,6 @@ function getProfile(request, response) {
     } else {
       response.render('mentors/profile.ejs', {user_profile: user_profile});
     };
-    console.log(user_profile.avatar_url)
   });
   
 };

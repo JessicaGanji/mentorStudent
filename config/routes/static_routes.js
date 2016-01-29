@@ -14,4 +14,7 @@ router.route('/about')
 router.route('/quiz')
 	.get(staticsController.getQuiz)
 
+router.route('/confirmation')
+	.get(staticsController.getConfirm)
+
 module.exports = router
