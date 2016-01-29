@@ -16,12 +16,13 @@
       <div class="col-md-4">
         <section class="resource-card">
           <div class="icon">
-            <% if (resource.photo) { %>
-              <img src="<%= resource.photo %>">
-            <% } else { %>
+            <% if (resource.avatar_url == null) { %>
               <img src="./../images/placeholder.png">
+            <% } else { %>
+              <img src="<%= resource.avatar_url %>">
             <% } %>
           </div>
+          <%= resource.avatar_url %>
           <h3><%= resource.name %></h3> 
 
           <p><strong><%= resource.format %></strong></p> 

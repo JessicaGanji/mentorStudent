@@ -10,7 +10,7 @@ var User = mongoose.Schema({
 	first_name: String,
 	last_name: String,
 	headline: String,
-	photo: String,
+	avatar_url: String,
 	location: String,
 	focus: String,
 	intro: String,

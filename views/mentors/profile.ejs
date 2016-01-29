@@ -3,10 +3,10 @@
 		<div class="col-md-8">
 			<section class="profile-card">
 				<div class="avatar">
-					<% if (user_profile.photo) { %>
-						<img src="<%= user_profile.photo %>">
+					<% if (user_profile.avatar_url == null) { %>
+						<img src="/images/profile.png">
 					<% } else { %>
-						<img src="./../images/placeholder.png">
+						<img src="<%= user_profile.avatar_url %>">
 					<% } %>
 				</div>
 				<div class="info">
@@ -90,7 +90,7 @@
 		<p><a href="mentors/">This user has not yet completed his/her profile. Please check back soon.</a></p>
 		<% if (user) { %>
 			<% if (user._id.toString() == user_profile._id.toString()) { %>
-				<h2>Complete your profile <>here</a> if you wish to be considered by young grasshoppers.</h2>
+				<h2>Complete your profile <a href="/mentors/<%= user._id%>/edit">here</a> if you wish to be considered by young grasshoppers.</h2>
 			<% } %>
 		<% } %>
 	</section>

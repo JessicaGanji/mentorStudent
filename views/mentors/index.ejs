@@ -34,13 +34,14 @@
 		<% users.forEach(function(mentor){ %>
 			<section class="name-card">
 				<div class="avatar"><a href="mentors/<%= mentor._id %>">
-					<% if (mentor.photo) { %>
-						<img src="<%= mentor.photo %>">
+					<% if (mentor.avatar_url) { %>
+						<img src="<%= mentor.avatar_url %>">
 					<% } else { %>
 						<img src="./../images/placeholder.png">
 					<% } %>
 				</a></div>
-				
+				<%= mentor.local.email %>
+
 				<div class="info">
 					<h2><a href="mentors/<%= mentor._id %>"><%= mentor.first_name %> <%= mentor.last_name %></a></h2>
 					<h3><%= mentor.headline %></h3>
