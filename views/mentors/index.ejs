@@ -42,11 +42,17 @@
 						<% } %>
 					</a></div>
 					<div class="info">
-						<h2><a href="mentors/<%= mentor._id %>"><%= mentor.first_name %> <%= mentor.last_name %></a></h2>
-						<h3><%= mentor.headline %></h3>
-						<h5><%= mentor.focus %></h5>
-						<h5><%= mentor.skills %></h5>	
-						<h5><%= mentor.location %></h5>			
+						<h2><a href="mentors/<%= mentor._id %>"><%= mentor.first_name %> <%= mentor.last_name %></a> -<span style="font-size: 18px;"> "<%= mentor.headline %>"</span></h2>
+						<h3></h3>
+						<% if (mentor.focus) { %>
+							<p><%= mentor.first_name %>'s area of expertise is <span class="highlight"><%= mentor.focus %></span></p>
+						<% } %>
+						<% if (mentor.skills) { %>
+							<p>The language/languages that <%= mentor.first_name %> knows are <span class="highlight"><%= mentor.skills %></span></p>
+						<% } %>
+						<% if (mentor.location) { %>
+							<p><%= mentor.first_name %> is from <span class="highlight"><%= mentor.location %></span></p>	
+						<% } %>		
 					</div>
 					<div style="clear:both;"></div>	
 				</section>
