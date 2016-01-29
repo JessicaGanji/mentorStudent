@@ -1,7 +1,6 @@
 var User        = require('../models/user.js');
 var passport    = require('passport');
-var gmailKey    = require('../config/key.js');
-var H_GMAIL_KEY = process.env.H_GMAIL_KEY || gmailKey
+var H_GMAIL_KEY = process.env.H_GMAIL_KEY || require('../config/key.js');
 
 // GET /signup
 function getSignup(request, response) {
