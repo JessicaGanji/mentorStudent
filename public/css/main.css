@@ -401,19 +401,26 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 /* Quiz */
 
 .tom{
-
-}
-
-.top label{
-	color:#000;
-}
-
-.top h2{
-	font-size: 16px;
+	text-align: center;
+	background-color: red;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 .jerry{
+	text-align: center;
 	background-color: blue;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.tom h2, .jerry h2{
+	color:#fff;
+	font-size: 18px;
+}
+
+.tom label, .jerry label{
+	color:#fff;
 }
 
 
