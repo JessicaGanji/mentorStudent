@@ -56,7 +56,7 @@ function putResource (request, response){
   Resource.findById({ _id: id }, function (error, resource){
     if(error) console.log( "There is an error on this page becuase:" + error );
 
-    if(request.body.photo) resource.photo               = request.body.photo;
+    if(request.body.avatar_url) resource.avatar_url               = request.body.avatar_url;
     if(request.body.name) resource.name                 = request.body.name;
     if(request.body.format) resource.format             = request.body.format;
     if(request.body.description) resource.description   = request.body.description;
