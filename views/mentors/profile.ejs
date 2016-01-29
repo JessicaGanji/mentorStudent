@@ -1,91 +1,97 @@
-<section class="row background">
-	<div class="col-md-8">
-		<section class="profile-card">
-			<div class="avatar">
-				<% if (user_profile.photo) { %>
-					<img src="<%= user_profile.photo %>">
-				<% } else { %>
-					<img src="./../images/placeholder.png">
+<% if (user_profile.first_name) { %>
+	<section class="row background">
+		<div class="col-md-8">
+			<section class="profile-card">
+				<div class="avatar">
+					<% if (user_profile.photo) { %>
+						<img src="<%= user_profile.photo %>">
+					<% } else { %>
+						<img src="./../images/placeholder.png">
+					<% } %>
+				</div>
+				<div class="info">
+					<h1><%= user_profile.first_name %> <%= user_profile.last_name %> - <%= user_profile.headline %></h1>
+					<h3><%= user_profile.location %></h3>
+					<% if (user_profile.skills.length >= 1 ) { %> 
+					    <h2>Skills: <%= user_profile.skills %></h2>
+					<% } %>
+				</div>
+				<div style="clear:both;"></div>	
+				<hr><p>thebestsiteever.com/mentors/<%= user_profile._id %></p>
+			</section>
+
+		  <section class="part side-line">
+		    <h3>Introduction</h3>
+		    <p><%= user_profile.intro %></p>
+		    <% if (user_profile.focus) { %>
+			    <h5>Focus: <%= user_profile.focus %></h5>
+		   	<% } %> 
+		   	<% if (user_profile.personal_link) { %>
+					<h5>Portfolio: <a href="<%= user_profile.personal_link %>" target="_blank"><%= user_profile.personal_link %></a></h5>
 				<% } %>
-			</div>
-
-			<div class="info">
-				<h1><%= user_profile.first_name %> <%= user_profile.last_name %> - <%= user_profile.headline %></h1>
-				<h4><%= user_profile.location %></h4>
-			</div>
-
-			<div style="clear:both;"></div>	
-		
-			<hr><p>thebestsiteever.com/mentors/<%= user_profile._id %></p>
-		</section>
-
-	  <section class="part side-line">
-	    <h3>Introduction</h3>
-	    <p><%= user_profile.intro %></p>
-	    <% if (user_profile.focus) { %>
-		    <h5>Focus: <%= user_profile.focus %></h5>
-	   	<% } %> 
-	   	<% if (user_profile.personal_link) { %>
-				<h5>Portfolio: <a href="<%= user_profile.personal_link %>" target="_blank"><%= user_profile.personal_link %></a></h5>
-			<% } %>
-		</section>
-
-    <% if (user_profile.skills.length >= 1 ) { %>
-	    <section class="part side-line">
-		    <h3>Skills</h3>
-		    <p><%= user_profile.skills %></p>
 			</section>
-		<% } %>
 
-    <% if (user_profile.experience) { %>
-	    <section class="part side-line">
-		    <h3>Experience</h3>
-		    <h5>Current Place of Employment: <a href="<%= user_profile.company_link %>" target="_blank"><%= user_profile.company %></a></h5>
+	    <% if (user_profile.experience) { %>
+		    <section class="part side-line">
+			    <h3>Experience</h3>
+			    <h5>Current Place of Employment: <a href="<%= user_profile.company_link %>" target="_blank"><%= user_profile.company %></a></h5>
 
-		    <p><%= user_profile.experience %></p>
-			</section>
-		<% } %>
-
-    <% if (user_profile.education) { %>
-	    <section class="part side-line">
-		    <h3>Education</h3>
-		    <p><%= user_profile.education %></p>
-			</section>
-		<% } %>
-  </div>
-		
-  <div class="col-md-4">
-    <% if (user_profile.status == true ) { %>
-	    <section class="btn-primary">
-		    <h4>Send <%= user_profile.first_name %> an email using our request form!</h4>
-			</section>
-	    <section class="part">
-	    	<h3>Availibility</h3>
-		    <p><%= user_profile.availibility %></p><hr>
-				<h5>Time Zone</h5>
-				<p><%= user_profile.time_zone %></p>
-			</section>
-		<% } else { %>
-	    <section class="btn-primary">
-		    <h4>Sorry, <%= user_profile.first_name %> is not currently able to be a mentor.</h4>
-			</section>
-			<section class="part">
-	    	<h3>Availibility</h3>
-		    <p>TBD</p><hr>
-				<h5>Time Zone</h5>
-				<p><%= user_profile.time_zone %></p>
-			</section>
-		<% } %>
-
-		<% if (user) { %>
-			<% if (user._id.toString() == user_profile._id.toString()) { %>
-				<section class="btn-edit"><a href="<%= user._id %>/edit"><h4>Edit Profile</h4></a></section>
-				<section class="btn-delete">
-				<form method="post" action="/mentors/<%= user._id %>">
-					<input type="hidden" name="_method" value="delete" />
-					<button type="submit"><h4>Delete Account</h4></button>
-				</form>
+			    <p><%= user_profile.experience %></p>
 				</section>
 			<% } %>
+
+	    <% if (user_profile.education) { %>
+		    <section class="part side-line">
+			    <h3>Education</h3>
+			    <p><%= user_profile.education %></p>
+				</section>
+			<% } %>
+	  </div>
+			
+	  <div class="col-md-4">
+	    <% if (user_profile.status == true ) { %>
+		    <section class="btn-primary">
+			    <a href="/mentors/<%= user_profile._id %>/message"><h4>Send <%= user_profile.first_name %> an email using our request form!</h4></a>
+				</section>
+		    <section class="part">
+		    	<h3>Availibility</h3>
+			    <p><%= user_profile.availibility %></p><hr>
+					<h5>Time Zone</h5>
+					<p><%= user_profile.time_zone %></p>
+				</section>
+			<% } else { %>
+		    <section class="btn-primary">
+			    <h4>Sorry, <%= user_profile.first_name %> is not currently able to be a mentor.</h4>
+				</section>
+				<section class="part">
+		    	<h3>Availibility</h3>
+			    <p>TBD</p><hr>
+					<h5>Time Zone</h5>
+					<p><%= user_profile.time_zone %></p>
+				</section>
+			<% } %>
+
+			<% if (user) { %>
+				<% if (user._id.toString() == user_profile._id.toString()) { %>
+					<section class="btn-edit"><a href="<%= user._id %>/edit"><h4>Edit Profile</h4></a></section>
+					<section class="btn-delete">
+					<form method="post" action="/mentors/<%= user._id %>">
+						<input type="hidden" name="_method" value="delete" />
+						<button type="submit"><h4>Delete Account</h4></button>
+					</form>
+					</section>
+				<% } %>
+			<% } %>
+	</div>
+<% } else { %>
+	<section class="row background incomplete">
+		<img src="incomplete.png">
+		<h2>Apologies, young grasshopper..</h2>
+		<p><a href="mentors/">This user has not yet completed his/her profile. Please check back soon.</a></p>
+		<% if (user) { %>
+			<% if (user._id.toString() == user_profile._id.toString()) { %>
+				<h2>Complete your profile <>here</a> if you wish to be considered by young grasshoppers.</h2>
+			<% } %>
 		<% } %>
-</div>
+	</section>
+<% } %>	
