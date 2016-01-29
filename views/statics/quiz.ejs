@@ -1,77 +1,69 @@
-<section class="row tom">
-  <div class="col-md-12">
-		<h1>Quiz</h1>
-	</div>
-</section>
+<section class="row quiz-background">
+  <div class="col-md-3"></div>
 
-<section class="row jerry">
-  <div class="col-md-12">
+  <section class="col-md-6 round-form">
+		<h3>Quiz</h3><hr>
+
 		<form id="quiz">
-			<h2>Are you interested in making mobile apps?</h2>
-				<label><input name="q1" type="radio" value="true" />True</label>
+			<div class="form-group">
+				<label>Are you interested in making mobile apps?</label><br>
+				<label><input name="q1" type="radio" value="true" /> True</label>
 				<label><input name="q1" type="radio" value="false" /> False</label>
-	</div>
-</section>
+      </div><hr>
 
-<section class="row tom">
-  <div class="col-md-12">
-			<h2>Are you interested in making games?</h2>
-				<label><input name="q2" type="radio" value="true" />True</label>
-				<label><input name="q2" type="radio" value="false" />False</label>
-	</div>
-</section>
+			<div class="form-group">
+				<label>Are you interested in making games?</label><br>
+				<label><input name="q2" type="radio" value="true" /> True</label>
+				<label><input name="q2" type="radio" value="false" /> False</label>
+      </div><hr>
+      
+			<div class="form-group">
+				<label>Do you enjoy solving complicated problems?</label><br>
+				<label><input name="q3" type="radio" value="true" /> True</label>
+				<label><input name="q3" type="radio" value="false" /> False</label>
+      </div><hr>
+      
+			<div class="form-group">
+				<label>Which of the following programming languages have you heard of before? [Check all that apply]</label>
+				<div class="checkbox">
+					<label><input name="JavaScript" type="checkbox" value="javascript" /> JavaScript</label><br>
+					<label><input name="q4" type="checkbox" value="ruby" /> Ruby</label><br>
+					<label><input name="q4" type="checkbox" value="php" /> PHP</label><br>
+					<label><input name="q4" type="checkbox" value="swift" /> Swift</label><br>
+					<label><input name="q4" type="checkbox" value="python" /> Python</label><br>
+					<label><input name="q4" type="checkbox" value="java" /> Corona</label><br>
+					<label><input name="q4" type="checkbox" value="HTML" /> HTML</label><br>
+	      </div>
+      </div><hr>
 
-<section class="row jerry">
-  <div class="col-md-12">
-			<h2>Do you enjoy solving complicated problems?</h2>
-				<label><input name="q3" type="radio" value="true" />True</label>
-				<label><input name="q3" type="radio" value="false" />False</label>
-	</div>
-</section>
-
-<section class="row tom">
-  <div class="col-md-12">
-			<h2>Which of the following programming languages have you heard of before? [Check all that apply]</h2>
-				<label><input name="JavaScript" type="checkbox" value="javascript" />JavaScript</label>
-				<label><input name="q4" type="checkbox" value="ruby" />Ruby</label>
-				<label><input name="q4" type="checkbox" value="php" />PHP</label>
-				<label><input name="q4" type="checkbox" value="swift" />Swift</label>
-				<label><input name="q4" type="checkbox" value="python" />Python</label>
-				<label><input name="q4" type="checkbox" value="java" />Corona</label>
-				<label><input name="q4" type="checkbox" value="HTML" />HTML</label>
-	</div>
-</section>
-
-<section class="row jerry">
-  <div class="col-md-12">
-			<h2>Do you enjoy designing things?</h2>
-				<label><input name="q5" type="radio" value="true" />True</label>
-				<label><input name="q5" type="radio" value="false" />False</label>
-	</div>
-</section>
-
-<section class="row tom">
-  <div class="col-md-12">
-			<input data-toggle="modal" data-target="#myModal" id="quiz-submit" name="submit" type="button" value="Grade This Quiz" />
+			<div class="form-group">
+				<label>Do you enjoy designing things?</label><br>
+				<label><input name="q5" type="radio" value="true" /> True</label>
+				<label><input name="q5" type="radio" value="false" /> False</label>
+      </div><hr>
+      
+			<input class="btn btn-default" data-toggle="modal" data-target="#myModal" id="quiz-submit" name="submit" type="button" value="Grade This Quiz" />
 		</form>
-	</div>
+	</section>
 </section>	
 
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel">Which language should you start with?</h4>
-		      </div>
-		      <div class="modal-body">
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Which language should you start with?</h4>
+	      </div>
+		     <div class="modal-body">
 		      	<!-- Module Text -->
-		      </div>
+		     </div>
 		    </div>
 		  </div>
 		</div>
   </div>
+
+  <div class="col-md-3"></div>
 </section>
 
 <script>

@@ -7,13 +7,13 @@ body{
 	letter-spacing: 1px;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;	
-	background-color: gray;
+	background: #000;
 }
 
 h1, h2, h3, h4, h5{
 	color:#000;
 	font-weight: 600;
-	margin: 1;
+	line-height: 1;
 }
 
 p{
@@ -100,7 +100,7 @@ section{
 /* Index */
 .hero{
 	background-image: url('../images/hero.png');
-	background-position: center center;
+	background-position: center -150px;
 	background-size: 100%;
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -136,7 +136,7 @@ section{
 }
 
 .student{
-	background-image: url('../images/mentor.jpg');
+	background-image: url('../images/student.jpeg');
 	background-position: center center;
 	background-size: 100%;
 }
@@ -165,11 +165,15 @@ section{
 
 .quiz{
 	text-align: center;
-	background-image: url('../images/placeholder.png');
+	background-image: url('../images/quiz.png');
 	background-position: center center;
 	background-size: 100%;
 	padding-top: 100px;
 	padding-bottom: 100px;
+}
+
+.quiz h2, .quiz p{
+	color: #fff;
 }
 
 .video{
@@ -237,26 +241,37 @@ a.btn{
 	font-size:13px;
 }
 
+.btn-message{
+	border-radius: 4px;
+	margin-bottom: 15px;
+}
+
 .btn-primary h4{
 	color: #fff;
 }
 
 .btn-edit{
 	border-radius: 4px 4px 0 0;
-	background-color: #5bc0de;
+/*	background-color: #5bc0de;*/
 }
 
 .btn-delete{ 
 	border-radius: 0 0 4px 4px;
-	background-color: #d9534f;
+/*	background-color: #d9534f;*/
+}
+
+.btn-delete button{
+	background-color: none;
+	background: none;
+	border-width: 0px;
 }
 
 .btn-edit h4, .btn-delete h4{
 	color: #fff;
 }
 
-/* Mentor Index */
 
+/* Mentor Index */
 .name-card{
 	padding: 15px;
 	margin-bottom:15px;
@@ -351,8 +366,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .incomplete{
 	text-align: center;
-	padding-top: 10%;
-	padding-bottom: 10%;
+	padding-top: 15%;
+	padding-bottom: 15%;
 }
 
 /* Search */
@@ -399,28 +414,13 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 
 /* Quiz */
-
-.tom{
-	text-align: center;
-	background-color: red;
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-.jerry{
-	text-align: center;
-	background-color: blue;
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-.tom h2, .jerry h2{
-	color:#fff;
-	font-size: 18px;
-}
-
-.tom label, .jerry label{
-	color:#fff;
+.quiz-background{
+	background: url('../images/quiz.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 30px 30px;
 }
 
 

@@ -10,7 +10,8 @@
 					<% } %>
 				</div>
 				<div class="info">
-					<h1><%= user_profile.first_name %> <%= user_profile.last_name %> - <%= user_profile.headline %></h1>
+					<h1><%= user_profile.first_name %> <%= user_profile.last_name %></h1> 
+					<h2><%= user_profile.headline %></h2>
 					<h3><%= user_profile.location %></h3>
 					<% if (user_profile.skills.length >= 1 ) { %> 
 					    <h2>Skills: <%= user_profile.skills %></h2>
@@ -50,7 +51,7 @@
 			
 	  <div class="col-md-4">
 	    <% if (user_profile.status == true ) { %>
-		    <section class="btn-primary">
+		    <section class="btn-primary btn-message">
 			    <a href="/mentors/<%= user_profile._id %>/message"><h4>Send <%= user_profile.first_name %> an email using our request form!</h4></a>
 				</section>
 		    <section class="part">
@@ -73,8 +74,8 @@
 
 			<% if (user) { %>
 				<% if (user._id.toString() == user_profile._id.toString()) { %>
-					<section class="btn-edit"><a href="<%= user._id %>/edit"><h4>Edit Profile</h4></a></section>
-					<section class="btn-delete">
+					<section class="btn-info btn-edit"><a href="<%= user._id %>/edit"><h4>Edit Profile</h4></a></section>
+					<section class="btn-danger btn-delete">
 					<form method="post" action="/mentors/<%= user._id %>">
 						<input type="hidden" name="_method" value="delete" />
 						<button type="submit"><h4>Delete Account</h4></button>
@@ -88,11 +89,12 @@
 		<img src="incomplete.png">
 		<% if (user) { %>
 			<% if (user._id.toString() == user_profile._id.toString()) { %>
-				<h2>Complete your profile <a href="/mentors/<%= user._id%>/edit">here</a> if you wish to be considered by young grasshoppers.</h2>
+				<h3>Welcome</h3>
+				<p>Complete your profile <a href="/mentors/<%= user._id%>/edit">here</a> if you wish to be considered by young grasshoppers.</p>
 			<% } %>
 		<% } else { %>
 			<h2>Apologies, young grasshopper..</h2>
-			<p><a href="mentors/">This user has not yet completed his/her profile. Please check back soon.</a></p>
+			<p>This user has not yet completed his/her profile. Please check back soon. Browse more mentors <a href="mentors/">here</a>.</p>
 		<% } %>
 	</section>
 <% } %>	
