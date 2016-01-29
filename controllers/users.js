@@ -1,6 +1,7 @@
 var User        = require('../models/user.js');
 var passport    = require('passport');
 var gmailKey    = require('../config/key.js');
+var H_GMAIL_KEY = process.env.H_GMAIL_KEY || gmailKey
 
 // GET /signup
 function getSignup(request, response) {
@@ -146,7 +147,7 @@ function postMessage(request, response) {
     var nodemailer  = require('nodemailer');
 
     // create reusable transporter object using the default SMTP transport
-    var transporter = nodemailer.createTransport(gmailKey);
+    var transporter = nodemailer.createTransport(H_GMAIL_KEY);
 
     var mailOptions = {
         from: 'WDI_20_LA Project Three',
