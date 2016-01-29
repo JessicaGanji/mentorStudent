@@ -141,7 +141,6 @@ function postMessage(request, response) {
 
   User.findById({_id: id}, function (error, message_user){
     if(error) console.log( "There is an error sending your message because:" + error );
-    response.json({message: message_user.local.email })
     console.log(message_user.local.email)
 
     var nodemailer  = require('nodemailer');
@@ -151,8 +150,7 @@ function postMessage(request, response) {
 
     var mailOptions = {
         from: 'WDI_20_LA Project Three',
-        to: recipient,
-        to: email,
+        to: [recipient, email],
         subject: subject,
         text: message,
         html: message
@@ -165,8 +163,8 @@ function postMessage(request, response) {
         }
         console.log('Message sent: ' + info.response);
     });
-
   });
+  response.redirect('/confirmation')
 };
 
 module.exports = {
