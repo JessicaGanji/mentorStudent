@@ -32,7 +32,7 @@
 
   <div class="col-md-8">
 		<% users.forEach(function(mentor){ %>
-			<% if (mentor.first_name && mentor.status == true) { %>
+			<% if (mentor.first_name && mentor.last_name && mentor.headline && mentor.status == true) { %>
 				<section class="name-card">
 					<div class="avatar"><a href="mentors/<%= mentor._id %>">
 						<% if (mentor.avatar_url) { %>
