@@ -32,23 +32,25 @@
 
   <div class="col-md-8">
 		<% users.forEach(function(mentor){ %>
-			<section class="name-card">
-				<div class="avatar"><a href="mentors/<%= mentor._id %>">
-					<% if (mentor.avatar_url) { %>
-						<img src="<%= mentor.avatar_url %>">
-					<% } else { %>
-						<img src="./../images/placeholder.png">
-					<% } %>
-				</a></div>
-				<div class="info">
-					<h2><a href="mentors/<%= mentor._id %>"><%= mentor.first_name %> <%= mentor.last_name %></a></h2>
-					<h3><%= mentor.headline %></h3>
-					<h5><%= mentor.focus %></h5>
-					<h5><%= mentor.skills %></h5>	
-					<h5><%= mentor.location %></h5>			
-				</div>
-				<div style="clear:both;"></div>	
-			</section>
+			<% if (mentor.first_name && mentor.status == true) { %>
+				<section class="name-card">
+					<div class="avatar"><a href="mentors/<%= mentor._id %>">
+						<% if (mentor.avatar_url) { %>
+							<img src="<%= mentor.avatar_url %>">
+						<% } else { %>
+							<img src="./../images/placeholder.png">
+						<% } %>
+					</a></div>
+					<div class="info">
+						<h2><a href="mentors/<%= mentor._id %>"><%= mentor.first_name %> <%= mentor.last_name %></a></h2>
+						<h3><%= mentor.headline %></h3>
+						<h5><%= mentor.focus %></h5>
+						<h5><%= mentor.skills %></h5>	
+						<h5><%= mentor.location %></h5>			
+					</div>
+					<div style="clear:both;"></div>	
+				</section>
+			<% } %>
 		<% }) %>
 
 		<nav>
