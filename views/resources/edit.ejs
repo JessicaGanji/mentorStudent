@@ -16,14 +16,21 @@
         <label for="avatar_url">Resource Photo</label>
         <input type="file" id="file_input"/>
         <p id="status">Please select a file</p>
-        <img style="border:1px solid gray;width:300px;" id="preview" src=<% if ( resource.avatar_url == null) { "/images/placeholder.png" %>
-        <% } else { %>"<%= resource.avatar_url %>"
-        <% } %>/>
-        <input type="hidden" id="avatar_url" name="avatar_url" value=<% if ( resource.avatar_url == null) { "/images/placeholder.png" %>
-        <% } else { %>"<%= resource.avatar_url %>"
-        <% } %>/>
-        <p class="help-block">Example block-level help text here.</p>
-        <input type="checkbox" id="avatar_url" name="avatar_url" value="/images/placeholder.png">Delete Picture
+        <img style="border:1px solid gray;width:300px;" id="preview" src=
+          <% if ( resource.avatar_url == null) { %>
+            "/images/resource.png"
+          <% } else { %>
+            "<%= resource.avatar_url %>"
+          <% } %>
+        />
+        <input type="hidden" id="avatar_url" name="avatar_url" value=
+          <% if ( resource.avatar_url == null) { %>
+            "/images/resource.png"
+          <% } else { %>
+            "<%= resource.avatar_url %>"
+          <% } %>
+        />
+        <p class="help-block">Must be smaller than 4 MB.</p>
       </div>
 
       <div class="form-group">
