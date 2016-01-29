@@ -28,6 +28,14 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 
 -
 
+#### Screen Shots
+
+![ Student.mentor() ERD ](readme/mentorstudent.png)
+![ Student.mentor() ERD ](readme/mentors.png)
+![ Student.mentor() ERD ](readme/resources.png)
+
+-
+
 #### User Stories
 
 | As a .. | I can.. | route |
