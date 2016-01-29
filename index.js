@@ -20,9 +20,9 @@ var userSetUp				= userPassport(passport);
 var resourceRouter 	= require('./config/routes/resource_routes.js');
 var apiRouter				= require('./config/routes/api_routes.js');
 
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -33,11 +33,11 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
-app.use(ejsLayouts)
-app.set('views', path.join(__dirname, 'views'))
-app.engine('ejs', require ('ejs').renderFile)
-app.set('view engine', 'ejs')
-app.use(express.static(__dirname + '/public'))
+app.use(ejsLayouts);
+app.set('views', path.join(__dirname, 'views'));
+app.engine('ejs', require ('ejs').renderFile);
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' })); 
 app.use(passport.initialize());
@@ -52,10 +52,10 @@ app.use(function (req, res, next) {
   next()
 });
 
-app.use('/', staticRouter)
-app.use('/', userRouter)
-app.use('/', resourceRouter)
-app.use('/', apiRouter)
+app.use('/', staticRouter);
+app.use('/', userRouter);
+app.use('/', resourceRouter);
+app.use('/', apiRouter);
 
 app.listen(port)
 console.log('Magic is happening on port' + port)

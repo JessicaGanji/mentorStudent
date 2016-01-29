@@ -24,6 +24,7 @@ router.route('/mentors/:id/edit')
 
 router.route('/mentors/:id/message')
 	.get(usersController.getMessage)
+	.post(usersController.postMessage)
 
 router.route('/mentors/:id')
 	.get(usersController.getProfile)

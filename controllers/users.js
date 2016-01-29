@@ -1,5 +1,6 @@
-var User      = require('../models/user.js');
-var passport  = require('passport');
+var User        = require('../models/user.js');
+var passport    = require('passport');
+var gmailKey    = require('../config/key.js');
 
 // GET /signup
 function getSignup(request, response) {
@@ -15,8 +16,6 @@ function postSignup(request, response) {
   });
 
   return signUpStrategy(request, response)
-
-
 };
 
 // GET /login
@@ -51,7 +50,6 @@ function getIndex(request, response) {
 
 // GET /mentors/:id
 function getProfile(request, response) {
-  console.log("GET PROFILE IS HIT")
   var id = request.params.id;
 
   User.findById({_id: id }, function (error, user_profile){
@@ -120,9 +118,48 @@ function deleteProfile(request, response) {
 function getMessage(request, response) {
   var id = request.params.id;
 
-  User.findById({_id: id}, function (error, user){
+  User.findById({_id: id}, function (error, message_user){
     if(error) console.log( "There is an error on this page because:" + error );
-    response.render('mentors/message.ejs', {user: user})
+    response.render('mentors/message.ejs', {message_user: message_user})
+  });
+};
+
+// POST mentors/:id/message
+function postMessage(request, response) {
+  var id = request.params.id;
+
+  var recipient             = request.body.recipient;
+  var email                 = request.body.email;
+  var subject               = request.body.subject;
+  var message               = request.body.message;
+
+  User.findById({_id: id}, function (error, message_user){
+    if(error) console.log( "There is an error sending your message because:" + error );
+    response.json({message: message_user.local.email })
+    console.log(message_user.local.email)
+
+    var nodemailer  = require('nodemailer');
+
+    // create reusable transporter object using the default SMTP transport
+    var transporter = nodemailer.createTransport(gmailKey);
+
+    var mailOptions = {
+        from: 'WDI_20_LA Project Three',
+        to: recipient,
+        to: email,
+        subject: subject,
+        text: message,
+        html: message
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            return console.log(error);
+        }
+        console.log('Message sent: ' + info.response);
+    });
+
   });
 };
 
@@ -137,5 +174,6 @@ module.exports = {
   getEdit: getEdit,
   putProfile: putProfile,
   deleteProfile: deleteProfile,
-  getMessage: getMessage
+  getMessage: getMessage,
+  postMessage: postMessage
 };
