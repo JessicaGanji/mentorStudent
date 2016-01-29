@@ -69,5 +69,4 @@ If you fork this repo, you must run `npm install` in order for the app to functi
 
 #### Wireframes
 
-![ Student.mentor() Landing Page ](readme/ux01.png)
-![ Student.mentor() Landing Page ](readme/ux02.png)
+![ Student.mentor() Landing Page ](readme/wireframes.png)
