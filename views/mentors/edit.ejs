@@ -147,21 +147,21 @@
     Function to carry out the actual PUT request to S3 using the signed request from the app.
 */
 function upload_file(file, signed_request, url){
-    console.log(file)
-    var xhr = new XMLHttpRequest();
-    xhr.open("PUT", signed_request);
-    xhr.setRequestHeader('x-amz-acl', 'public-read');
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            document.getElementById("preview").src = url;            
-            document.getElementById("avatar_url").value = url;
-        }
-    };
-    xhr.onerror = function() {
-        console.log("in error")
-        alert("Could not upload file."); 
-    };
-    xhr.send(file);
+  console.log(file)
+  var xhr = new XMLHttpRequest();
+  xhr.open("PUT", signed_request);
+  xhr.setRequestHeader('x-amz-acl', 'public-read');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+        document.getElementById("preview").src = url;            
+        document.getElementById("avatar_url").value = url;
+    }
+  };
+  xhr.onerror = function() {
+    console.log("in error")
+    alert("Could not upload file."); 
+  };
+  xhr.send(file);
 }
 
 /*
