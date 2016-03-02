@@ -17,7 +17,6 @@ var S3_BUCKET       = process.env.S3_BUCKET;
 var port 		    		= process.env.PORT || 3000;
 var mongoUri 	    	= process.env.MONGOLAB_URI || ('mongodb://localhost/project_three');
 
-
 var staticRouter  	= require('./config/routes/static_routes.js');
 var userRouter			= require('./config/routes/user_routes.js');
 var userPassport		= require('./config/passport.js');
@@ -61,7 +60,7 @@ app.get('/sign_s3', function(req, res){
     aws.config.update({accessKeyId: AWS_ACCESS_KEY , secretAccessKey: AWS_SECRET_KEY });
     aws.config.update({region: '' , signatureVersion: '' });
     var s3 = new aws.S3(); 
-    console.log(S3_BUCKET)
+    console.log(S3_BUCKET);
     var s3_params = { 
         Bucket: S3_BUCKET, 
         Key: req.query.file_name, 
@@ -84,11 +83,11 @@ app.get('/sign_s3', function(req, res){
     });
 });
 
-app.use('/', staticRouter)
-app.use('/', userRouter)
-app.use('/', resourceRouter)
-app.use('/', apiRouter)
+app.use('/', staticRouter);
+app.use('/', userRouter);
+app.use('/', resourceRouter);
+app.use('/', apiRouter);
 
-app.listen(port)
-console.log('Magic is happening on port' + port)
+app.listen(port);
+console.log('Magic is happening on port' + port);
 
