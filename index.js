@@ -1,4 +1,4 @@
-var express 				= require('express');
+,var express 				= require('express');
 var app							= express();
 var mongoose				= require('mongoose');
 var passport 				= require('passport');
@@ -15,7 +15,7 @@ var AWS_ACCESS_KEY  = process.env.AWS_ACCESS_KEY;
 var AWS_SECRET_KEY  = process.env.AWS_SECRET_KEY;
 var S3_BUCKET       = process.env.S3_BUCKET;
 var port 		    		= process.env.PORT || 3000;
-var mongoUri 	    	= process.env.MONGOLAB_URI || 'mongodb://localhost/project_three';
+var mongoUri 	    	= process.env.MONGOLAB_URI || ('mongodb://localhost/project_three');
 
 
 var staticRouter  	= require('./config/routes/static_routes.js');
